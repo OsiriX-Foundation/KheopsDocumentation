@@ -2,3 +2,4 @@ theme: jekyll-theme-slate
 title: Kheops
 description: User Documentation
 repository_url: "https://github.com/OsiriX-Foundation"
+is_project_page: false
