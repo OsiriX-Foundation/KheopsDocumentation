@@ -1,3 +1,6 @@
+
+![Landing Page](img/landing_page.png)
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/OsiriX-Foundation/KheopsDocumentation/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
