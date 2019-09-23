@@ -6,3 +6,5 @@ nav_order: 2
 ---
 
 # cURL
+
+Tokens are OAuth 2.0 Access Tokens that allow a user to access the Kheops API server without authenticating through the Keycloak Authorization Server. 
