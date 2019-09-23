@@ -10,4 +10,4 @@ permalink: /docs/tokens
 
 Kheops Tokens provide a mechanism to give temporary access to Kheops resources.
 
-Two classes of tokens exist, *Album* tokens, and *User* tokens. Album tokens give access to a specific Kheops album. User tokens give full access to a User's account. When both Album, and User tokens are generated an expiration date must be specified. The token will no longer function once the expiration date passes. Both token types can also be revoked once they are no longer needed or if the token has been compromised.
+Two classes of tokens exist, *Album* tokens, and *User* tokens. Album tokens give access to a specific Kheops album. User tokens give full access to a User's account. Album and User tokens both have a fixed expiration date that must be specified when they are created. Tokens will no longer function after the expiration date has passed. Both token types can be revoked once they are no longer needed or if the token has been compromised.
