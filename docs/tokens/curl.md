@@ -16,7 +16,7 @@ There are three ways to use tokens.
 
 ### OAuth2.0 Access Token
 
-The prefered method is through Oauth 2.0 bearer authorization.
+The prefered method is through OAuth 2.0 Bearer Authorization.
 
 ```console
 prompt:~ user$ curl https://demo.kheops.online/api/studies -H "Authorization: Bearer B18jTXCzTrQzj1ZednqHUY"
@@ -24,7 +24,7 @@ prompt:~ user$ curl https://demo.kheops.online/api/studies -H "Authorization: Be
 
 ### HTTP Basic Authorization
 
-It is also possible to use the token with Basic authorization. In the case of Basic authorization, the user name provided is ignored. 
+It is also possible to use the token with HTTP Basic Authorization. In the case of Basic authorization, the user name provided is ignored. 
 
 ```console
 prompt:~ user$ curl https://token:B18jTXCzTrQzj1ZednqHUY@demo.kheops.online/api/studies
@@ -32,7 +32,7 @@ prompt:~ user$ curl https://token:B18jTXCzTrQzj1ZednqHUY@demo.kheops.online/api/
 
 ### Link URL
 
-The final stratagy to pass the token is directly through the URL. This method is the weakest from a security point of view and should be reserved for situations when compatibility is required with external applications that can not be made to work the above authorization stratagies. When passing the token in the url the `/api/link/{token}/` endpoint replaces the `/api` endpoint.
+The final strategy is to pass the token is directly through the URL. This method is the weakest from a security point of view and should be reserved for situations when compatibility is required with external applications that can not be made to work the above authorization stratagies. When passing the token in the url the `/api/link/{token}/` endpoint replaces the `/api` endpoint.
 
 ```console
 prompt:~ user$ curl https://demo.kheops.online/api/link/B18jTXCzTrQzj1ZednqHUY/studies
