@@ -15,6 +15,8 @@ Easily share DICOM data with colleages and remote collaborators.
 Create customized online workflows centered around DICOM studies.
 {: .fs-6 .fw-300 }
 
+[Try the Demo](https://demo.kheops.online){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 } [Source code on on GitHub](https://github.com/OsiriX-Foundation){: .btn .fs-5 .mb-4 .mb-md-0 } [API Documentation](https://github.com/OsiriX-Foundation/KheopsAuthorization/wiki){: .btn .fs-5 .mb-4 .mb-md-0 } 
+
 ---
 
 ## The Kheops platform
