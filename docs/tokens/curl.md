@@ -40,7 +40,7 @@ prompt:~ user$ curl https://demo.kheops.online/api/link/B18jTXCzTrQzj1ZednqHUY/s
 
 ## User token paramters
 
-When using a [user token](/docs/tokens/user_tokens) all studies the user has access to will be returned. In order to specify a specific album or inbox when using a user token it is necessay specify the source using a query parameter. Use `?inbox=true` to specify the inbox. Use `?album={album_id}` to specify the album. The album ID can be found for example in the URL when displaying an album.
+When using a [user token](/docs/tokens/user_tokens) all studies the user has access to will be returned. In order to specify a specific album or inbox when using a user token it is necessay specify the source using a query parameter. Use `?inbox=true` to specify the inbox. Use `?album={album_id}` to specify the album. The album ID can be found in the URL when viewing and album in the Kheops webUI.
 
 ```console
 prompt:~ user$ curl https://demo.kheops.online/api/studies?inbox=true -H "Authorization: Bearer oTK6mCWsN8RKRzlWtnK8pd"
