@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Album Tokens
+title: User Tokens
 parent: Tokens
 nav_order: 2
 permalink: /docs/tokens/user_tokens
