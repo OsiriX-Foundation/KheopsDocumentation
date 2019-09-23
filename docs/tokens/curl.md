@@ -92,7 +92,7 @@ prompt:~ user$ curl "https://demo.kheops.online/api/wado?studyUID=1.3.6.1.4.1.19
 
 ![Series Thumbnail](https://demo.kheops.online/api/link/B18jTXCzTrQzj1ZednqHUY/wado?studyUID=1.3.6.1.4.1.19291.2.1.1.1128230802910216257358211407773&seriesUID=1.3.6.1.4.1.19291.2.1.2.11282308029102162573582122151467&requestType=WADO&rows=250&columns=250&contentType=image%2Fjpeg)
 
-Download an image of a specific DICOM instance.
+### Download an image of a specific DICOM instance.
 
 ```console
 prompt:~ user$ curl "https://demo.kheops.online/api/wado?studyUID=1.3.6.1.4.1.19291.2.1.1.1128230802910216257358211407773&seriesUID=1.3.6.1.4.1.19291.2.1.2.11282308029102162573582122151467&objectUID=1.3.6.1.4.1.19291.2.1.3.11282308029102162573582122291522&requestType=WADO&rows=250&columns=250&contentType=image%2Fjpeg" -H "Authorization: Bearer B18jTXCzTrQzj1ZednqHUY"
