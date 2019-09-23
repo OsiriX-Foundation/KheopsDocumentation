@@ -1,5 +1,3 @@
-theme: jekyll-theme-slate
+theme: pmarsceill/just-the-docs
 title: Kheops
 description: User Documentation
-github:
-  repository_url: https://github.com/OsiriX-Foundation
