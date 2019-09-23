@@ -21,7 +21,7 @@ Create customized online workflows centered around DICOM studies.
 
 ## The Kheops platform
 
-Kheops is a platform build to allow users to share data in a reasearch setting.
+Kheops is a platform built to facilitate sharing of data in research settings.
 
 ![Landing Page](img/landing_page.png)
 
