@@ -3,6 +3,7 @@ layout: default
 title: cURL
 parent: Tokens
 nav_order: 3
+permalink: /docs/tokens/curl
 ---
 
 # cURL
