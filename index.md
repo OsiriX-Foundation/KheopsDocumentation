@@ -7,7 +7,7 @@ permalink: /
 ---
 
 # Kheops
-{: .fs-9 .no_toc }
+{: .fs-9 }
 
 Easily share DICOM data with colleages and remote collaborators.
 {: .fs-6 .fw-300 }
@@ -20,14 +20,7 @@ Create customized online workflows centered around DICOM studies.
 ---
 
 ## The Kheops platform
-{: .no_toc }
 
 Kheops is a platform built to facilitate sharing of data in research settings.
 
 ![Landing Page](/img/landing_page.png)
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
