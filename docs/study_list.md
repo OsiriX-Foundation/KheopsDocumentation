@@ -17,8 +17,8 @@ The toolbar contains buttons that will perform actions on the selected series.
 
 ![Series List Toolbar](/img/series_list_toolbar.png)
 
-|one | two |
-------------
+| |  |
+|:---|:----|
 | ![Send](/img/send.png) | Send the selected series to another user on Kheops. The sent series will become available in the destination user's inbox. | 
 | ![Add to an album](/img/add_to_album.png) | Add the selected series to an album. It is also possible to directly create a new album with the selected series. ![Create album item](/img/create_album_item.png) |
 |![Favorites](/img/favorites.png) | Add the selected Study to the list of favorites. |
