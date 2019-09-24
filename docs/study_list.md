@@ -22,7 +22,7 @@ The study list is the main interface in Kheops. It is used to visualize the cont
 
 ## Study Actions
 
-To display the study action, hover the mouse over a study. 
+To display the study action, hover the mouse over a study.
 
 ![Study Actions](/img/study_actions.png)
 
