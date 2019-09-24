@@ -62,7 +62,7 @@ You can drag and drop directories containing DICOM files to upload them.
 
 ![Import video](/img/import_vid.gif)
 
-Another option is to use the import dropdown menu so import files or directories.
+Another option is to use the import drop-down menu to import files or directories.
 
 ![Import dropdown](/img/import_dropdown.png)
 
