@@ -52,6 +52,8 @@ prompt:~ user$ curl https://demo.kheops.online/api/link/B18jTXCzTrQzj1ZednqHUY/s
 
 ## Example DICOMweb Requests
 
+Below are sample DICOMweb requests. For more information refer to [Part 18 (DICOMweb) of the DICOM standard](http://dicom.nema.org/medical/dicom/current/output/html/part18.html).
+
 ### Get a list of studies
 
 ```console
