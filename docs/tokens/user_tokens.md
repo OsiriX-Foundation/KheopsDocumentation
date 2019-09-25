@@ -8,7 +8,7 @@ permalink: /docs/tokens/user_tokens
 
 # User Tokens
 
-User tokens give full user access to the Kheops platform. They are intended to be used by application that need to perform actions on Kheops in the name of the user. User tokens are OAuth2.0 Access tokens that can be used with Bearer Authorization when calling the [Kheops APIs](https://github.com/OsiriX-Foundation/KheopsAuthorization/wiki).
+User tokens give full user access to the Kheops platform. They are intended to be used by application that need to perform actions on behalf of a user. User tokens are OAuth2.0 Access tokens that can be used with Bearer Authorization when calling the [Kheops APIs](https://github.com/OsiriX-Foundation/KheopsAuthorization/wiki).
 
 DICOMweb calls made using a user token will return all studies a user has access to unless an additional [query parameter](/docs/tokens/curl#user-token-parameters) is provided.
 

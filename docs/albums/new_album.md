@@ -1,7 +1,7 @@
 ---
 layout: default
 title: New Album
-parent: albums
+parent: Albums
 nav_order: 1
 permalink: /docs/albums/new_album
 ---
