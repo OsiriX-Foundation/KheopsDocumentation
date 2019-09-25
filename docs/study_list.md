@@ -34,7 +34,7 @@ To display the study action, hover the mouse over a study.
 | ![Add](/img/add_action.png) | Add an image or movie to the study. Images will be added to a new series within the study |
 | ![Comment](/img/comment_action.png) | Add or view comments made to the study |
 | ![Favorite](/img/favorite_action.png) | Set the study as a favorite |
-
+| ![Report Providers](/img/report_provider_action.png) | Activate a Report Provider |
 
 ## The Toolbar
 
