@@ -13,7 +13,7 @@ To manage the list of users that have access to an album:
 * Click on **Settings** new the top  side of the screen.
 * Click on **Users** on the left side of the screen.
 
-Users are divided into tow groups, **Data stewards** and all other users. Data stewards have full access to the album and all album settings. The access of other users is limited by the **Album user settings**.
+Users are divided into two groups, **Data stewards** and all other users. Data stewards have full access to the album and all album settings. The access of other users is limited by the **Album user settings**.
 
 ![Manage Users](/img/manage_users.png)
 
