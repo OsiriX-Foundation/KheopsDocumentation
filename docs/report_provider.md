@@ -40,7 +40,7 @@ https://reportprovider.kheops.online/.well-known/kheops-report-configuration
 
 ![New Report Provier](/img/new_report_provider.png)
 
-Once the Report Provider has been properly configured, the report provider will display a small green checkmark to confirm that the Kheops server was succefully retreive the report provider's configuration.
+Once the Report Provider has been properly configured, the report provider will display a small green checkmark to confirm that the Kheops server was able to succefully retreive the report provider's configuration.
 
 ![Configure Report Provider](/img/configured_report_provider.png)
 
