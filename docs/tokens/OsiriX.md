@@ -23,7 +23,7 @@ It is possible to connect a Kheops album directly to third-party applications th
 
 ## Query/Retreive
 
-It is now possible to use OsiriX's standard query and retrieve to access the album as a PACS.
+It is now possible to use OsiriX's standard query, retrieve and store to access the album as a PACS.
 
 ![OsiriX Retrieve](/img/osirix_retrieve.png)
 
