@@ -20,7 +20,7 @@ permalink: /docs/tokens/curl
 ## Using tokens with cURL
 Tokens are OAuth 2.0 Access Tokens that allow a user to access the Kheops API server without authenticating through the Keycloak Authorization Server. 
 
-Tokens can be used to access the Kheops DICOMweb restfull endpoint at `/api` and the wado endpoint at `/api/wado`.
+Tokens can be used to access the Kheops DICOMweb restfull endpoint at `/api` and the wado-uri endpoint at `/api/wado`.
 
 There are three ways to use tokens. 
 
@@ -42,7 +42,7 @@ prompt:~ user$ curl https://token:B18jTXCzTrQzj1ZednqHUY@demo.kheops.online/api/
 
 ### Link URL
 
-The final strategy to pass the token is directly through the URL. This method is the weakest from a security point of view and should be reserved for situations when compatibility is required with external applications that can not be made to work the above authorization stratagies. When passing the token in the url the `/api/link/{token}/` endpoint replaces the `/api` endpoint.
+The final strategy to pass the token is directly through the URL. This method is the weakest from a security point of view and should be reserved for situations when compatibility is required with external applications that can not be made to work using the above authorization stratagies. When passing the token in the url the `/api/link/{token}/` endpoint replaces the `/api` endpoint.
 
 ```console
 prompt:~ user$ curl https://demo.kheops.online/api/link/B18jTXCzTrQzj1ZednqHUY/studies
