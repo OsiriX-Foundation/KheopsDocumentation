@@ -1,8 +1,8 @@
 ---
 layout: default
-title: cURL
-parent: Tokens
-nav_order: 10
+title: Keycloak
+parent: Installation
+nav_order: 1
 permalink: /docs/installation/keycloak
 ---
 
