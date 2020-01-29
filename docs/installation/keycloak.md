@@ -20,7 +20,7 @@ In order for the KHEOPS UI frontend to be able to intiate a login for a user it 
 
 ## 2. Client Scope (*kheops*)
 
-KHEOPS will accept JWT Access Tokens issued by Keycloak that contain "*kheops*" within the "*scope*" claim.
+KHEOPS will accept JWT Access Tokens issued by Keycloak that contain "*kheops*" within the "*scope*" claim. In order for the KHEOPS UI to display the user's name and email address, these need to be present in the generated ID tokens.
 
 ### Example for adding the "*kheops*" *scope* claim.
 
@@ -29,6 +29,9 @@ Create a new Client Scope that includes *kheops* in the token scope.
 
 Assign the new kheops Client Scope as a default scope for the login client.
 ![Add Scope Claim](/img/keycloak_kheops_add_scope.png)
+
+Add the *email* and *full name* token mappers to the new kheops Client Scope by clicking on the *Add Builtin* button.
+![Add Scope mappers](/img/keycloak_kheops_client_mappers.png)
 
 ## 3. Service Account
 
