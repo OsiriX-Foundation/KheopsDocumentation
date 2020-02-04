@@ -27,11 +27,11 @@ KHEOPS will accept JWT Access Tokens issued by Keycloak that contain "*kheops*" 
 Create a new Client Scope that includes *kheops* in the token scope.
 ![New Scope Claim](/img/keycloak_kheops_client_scope.png)
 
-Assign the new kheops Client Scope as a default scope for the login client.
-![Add Scope Claim](/img/keycloak_kheops_add_scope.png)
-
 Add the *email* and *full name* token mappers to the new kheops Client Scope by clicking on the *Add Builtin* button.
 ![Add Scope mappers](/img/keycloak_kheops_client_mappers.png)
+
+Assign the new kheops Client Scope as a default scope for the login client.
+![Add Scope Claim](/img/keycloak_kheops_add_scope.png)
 
 ## 3. Service Account
 
