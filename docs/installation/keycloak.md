@@ -14,6 +14,8 @@ KHEOPS delegates user management to Keycloak. With the appropriate configuration
 
 In order for the KHEOPS UI frontend to be able to intiate a login for a user it will need to use a Keycloak Client. This must be a public OAuth2.0 client with Hybrid flow (Standard flow and Implicit flow enabled).
 
+Set reasonable values for the *Valid Redirect URIs* and *Web Origins*. The wildcard * will work, but with negative security implications. 
+
 ### Example configuration.
 ![New Client](/img/keycloak_kheops_login_client.png)
 
