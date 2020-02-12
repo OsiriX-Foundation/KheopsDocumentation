@@ -8,7 +8,7 @@ permalink: /docs/installation/keycloak
 
 # Keycloak
 
-KHEOPS delegates user management to Keycloak. With the appropriate configuration, any recent version of Keycloak can be used. There are many different ways to configure Keycloak to work with KHEOPS. This document describes the required configuration, along with informational examples for how to acheive this configuration.
+KHEOPS delegates user management to Keycloak. With the appropriate configuration, any recent version of Keycloak can be used. There are many different ways to configure Keycloak to work with KHEOPS. This document describes the required configuration, along with informational examples for how to acheive this configuration. Make sure to create a realm before following these instructions. These instructions are not meant to be applied to the "Master" realm.
 
 ## 1. Keycloak KHEOPS Login Client
 
