@@ -8,6 +8,11 @@ permalink: /docs/installation/releasenotes
 
 # Release Notes and Upgrade Instructions
 
+KHEOPS is composed of a number of Docker Images. All the docker images belonging to a single version and meant to run together are taged with the same version number. As a general rule, upgrading versions is simply a matter up updating the tag on the docker images. **Addition steps** that need to be performed are detailed below. KHEOPS uses [Liquibase](https://www.liquibase.org) to manage the database schema, and the database will be automatically upgraded.
+
+#### As with any ungrade - make sure to perform a backup of the database used by KHEOPS before performing an upgrade.
+
+
 ## v0.9.4
 ---
 
