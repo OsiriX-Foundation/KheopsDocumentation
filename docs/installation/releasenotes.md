@@ -12,9 +12,9 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
 
 #### As with any ungrade - make sure to perform a backup of the database used by KHEOPS before performing an upgrade.
 
+---
 
 ## v0.9.4
----
 
 **When upgrading, make sure to install and run v0.9.3 prior to installing v0.9.4.**
 
@@ -32,8 +32,9 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
   #### Note when removing secrets - don't forget to remove reverences to secrets in the *docker-compose.yml*.
 - The Keycloak *kheopsAuthorization* Serivce Account is no longer used.
 
-## v0.9.3
 ---
+
+## v0.9.3
 
 **Transition version to v0.9.4**
 
