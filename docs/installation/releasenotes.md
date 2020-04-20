@@ -23,6 +23,8 @@ permalink: /docs/installation/releasenotes
 - Environment variable `KHEOPS_KEYCLOAK_REALMS` is no longer used.
 - Environment variable `KHEOPS_KEYCLOAK_CLIENTID` is no longer used.
 - Docker secret `kheops_keycloak_clientsecret` is no longer used.
+- Docker secret `kheops_metric_ressource_password` is no longer used.
+  #### Note when removing secrets - don't forget to remove reverences to secrets in the *docker-compose.yml*.
 - The Keycloak *kheopsAuthorization* Serivce Account is no longer used.
 
 ## v0.9.3
@@ -53,7 +55,19 @@ Versions of KHEOPS up to v0.9.2 had a strong dependecy on Keycloak. Only the use
 
 - Environment variable `KHEOPS_UI_KEYCLOAK_CLIENTID` is renamed `KHEOPS_UI_CLIENTID`
 
-- Make sure that the KHEOPS UI login client in Keycloak  has the `web-origins` Client Scope as an Assigned Default Client Scope.
+- Make sure that the KHEOPS UI login client in Keycloak has the `web-origins`, `email`, and `profile` Client Scope as an Assigned Default Client Scope.
+
+
+#### Notes for upgrading from nonsecure install
+
+- Pass the internal docker network hostname of the Keycloak server as the `KHEOPS_OIDC_PROVIDER` to the *kheops-authorization* Docker container in the *docker-compose.yml* file.
+
+  ``` yaml
+      environment:
+        KHEOPS_OIDC_PROVIDER: http://keycloak:8080/auth/realms/kheops
+  ```
+- Use the *osirixfoundation/kheops-authorization:v0.9.3-noissuer* image for the *kheops-authorization* container.
+
 
 ## Older versions
 
