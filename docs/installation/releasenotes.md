@@ -69,7 +69,7 @@ Versions of KHEOPS up to v0.9.2 had a strong dependecy on Keycloak. Only the use
 
   If using Keycloak, this value would probably be set to `${KHEOPS_OIDC_PROVIDER}/account`. For example: `https://keycloak.kheops.online/auth/realms/demo/account`
 
-#### Notes for upgrading from nonsecure install
+#### Notes for upgrading for nonsecure install
 
 - Pass the internal docker network hostname of the Keycloak server as the `KHEOPS_OIDC_PROVIDER` to the *kheops-authorization* Docker container in the *docker-compose.yml* file.
 
