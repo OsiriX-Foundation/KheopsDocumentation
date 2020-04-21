@@ -19,7 +19,7 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
 **When upgrading, make sure to install and run v0.9.3 prior to installing v0.9.4.**
 
 ### Changes
-- removed dependency on Keycloak.
+- Removed dependency on Keycloak.
 - UI Improvements.
 
 ### Upgrade
@@ -29,7 +29,7 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
 - Environment variable `KHEOPS_KEYCLOAK_CLIENTID` is no longer used.
 - Docker secret `kheops_keycloak_clientsecret` is no longer used.
 - Docker secret `kheops_metric_ressource_password` is no longer used.
-  #### Note when removing secrets - don't forget to remove reverences to secrets in the *docker-compose.yml*.
+  #### Note when removing secrets - don't forget to remove references to secrets in the *docker-compose.yml*.
 - The Keycloak *kheopsAuthorization* Serivce Account is no longer used.
 
 ---
@@ -42,6 +42,8 @@ Versions of KHEOPS up to v0.9.2 had a strong dependecy on Keycloak. Only the use
 
  Starting with v0.9.4, KHEOPS uses exclusivly OpenID Connect (OIDC) for user authentication. v0.9.3 is a transtion release that is still dependent on Keycloak, and retrieves the user names and emails from Keycloak at startup.
 
+ While we still expect Keycloak to be used in the majority of cases. It will now be possible to directly use other 
+
 ### Changes
 - Loads user profile information from Keycloak at startup
 - Updates user profile information at each login.
@@ -53,16 +55,19 @@ Versions of KHEOPS up to v0.9.2 had a strong dependecy on Keycloak. Only the use
 
   The full path to the OIDC provider must be set. Its value will typically be `${KHEOPS_KEYCLOAK_URI}/auth/realms/${KHEOPS_KEYCLOAK_REALMS}`
   
-  For example: If the `KHEOPS_KEYCLOAK_URI` is "https://keycloak.kheops.online", and the `KHEOPS_KEYCLOAK_REALMS` is "demo", the value of `KHEOPS_OIDC_PROVIDER` would be "https://keycloak.kheops.online/auth/realms/demo".
+  For example: If the `KHEOPS_KEYCLOAK_URI` is `https://keycloak.kheops.online`, and the `KHEOPS_KEYCLOAK_REALMS` is "demo", the value of `KHEOPS_OIDC_PROVIDER` would be `https://keycloak.kheops.online/auth/realms/demo`.
 
 - Environment variables `KHEOPS_ROOT_SCHEME`, `KHEOPS_ROOT_HOST`, and `KHEOPS_ROOT_PORT` are replaced by `KHEOPS_ROOT_URL`.
 
-  The value of `KHEOPS_ROOT_URL` will typically be `${KHEOPS_ROOT_SCHEME}://${KHEOPS_ROOT_HOST}[:${KHEOPS_ROOT_PORT}]`. If the port is the default port for the scheme (e.g., 443 for https), it can be omitted.
+  The value of `KHEOPS_ROOT_URL` will typically be `${KHEOPS_ROOT_SCHEME}://${KHEOPS_ROOT_HOST}[:${KHEOPS_ROOT_PORT}]`. If the port is the default port for the scheme (e.g., 443 for https), it can be omitted. For example: `https://demo.kheops.online`.
 
 - Environment variable `KHEOPS_UI_KEYCLOAK_CLIENTID` is renamed `KHEOPS_UI_CLIENTID`
 
 - Make sure that the KHEOPS UI login client in Keycloak has the `web-origins`, `email`, and `profile` Client Scope as an Assigned Default Client Scope.
 
+- `KHEOPS_UI_USER_MANAGEMENT_URL` is a new optional environment variable that can be set to provide a page where a user can access user settings. 
+
+  If using Keycloak, this value would probably be set to `${KHEOPS_OIDC_PROVIDER}/account`. For example: `https://keycloak.kheops.online/auth/realms/demo/account`
 
 #### Notes for upgrading from nonsecure install
 
