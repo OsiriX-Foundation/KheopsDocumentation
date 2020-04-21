@@ -40,7 +40,7 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
 
 Versions of KHEOPS up to v0.9.2 had a strong dependecy on Keycloak. Only the user's ID (sub) was stored in the KHEOPS database, and KHEOPS would use Keycloak APIs and a service account (kheopsAuthorization) to discover a user's name and email address. 
 
- Starting with v0.9.4, KHEOPS uses exclusivly OpenID Connect (OIDC) for user authentication. v0.9.3 is a transtion release that is still dependent on Keycloak, and retrieves the user names and emails from Keycloak at startup.
+ Starting with v0.9.4, KHEOPS uses exclusivly [OpenID Connect (OIDC)](https://openid.net/connect/) for user authentication. v0.9.3 is a transtion release that is still dependent on Keycloak, and retrieves the user names and emails from Keycloak at startup.
 
  While we still expect Keycloak to be used in the majority of cases. It will now be possible to directly use other 
 
