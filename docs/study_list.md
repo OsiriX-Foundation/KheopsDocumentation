@@ -16,7 +16,7 @@ permalink: /docs/study_list
 
 ---
 
-The study list is the main interface in Kheops. It is used to visualize the contents of both the [inbox](/docs/inbox) and [albums](/docs/albums). Study lists are in fact lists of DICOM series organized by study. Since the inbox and albums contain series, the series that are availablewithin a study can differ between different context. For example, only a selected number of series might be added to an album. In this case study will contain additional series when viewed in the inbox, and fewer when viewed in the album.
+The study list is the main interface in Kheops. It is used to visualize the contents of both the [inbox](/docs/inbox) and [albums](/docs/albums). Study lists are in fact lists of DICOM series organized by study. Since the inbox and albums contain series, the series that are available within a study can differ between different context. For example, only a selected number of series might be added to an album. In this case study will contain additional series when viewed in the inbox, and fewer when viewed in the album.
 
 ![study list](/img/study_list.png)
 
@@ -52,7 +52,7 @@ The toolbar contains buttons that will perform actions on the selected series.
 
 ## Selecting Series
 
-All series in a study can be selected by clicking on the checkbox next to the patient name. It is also possible to select only specific series by click on the appropriate checkboxes. For example, in the screeshot below, only 3D VR and 3D MIP are selected. When the buttons in the toolbar are clicked, the action will only be applied to these two series.
+All series in a study can be selected by clicking on the checkbox next to the patient name. It is also possible to select only specific series by click on the appropriate checkboxes. For example, in the screenshot below, only 3D VR and 3D MIP are selected. When the buttons in the toolbar are clicked, the action will only be applied to these two series.
 
 ![Selected Series](/img/select_series.png)
 
@@ -76,7 +76,7 @@ Click on the search icon to display the search bar.
 
 ## List Refresh
 
-Click on the refrech icon to refresh the study list if needed.
+Click on the refresh icon to refresh the study list if needed.
 
 ![Refresh](/img/refresh.png)
 

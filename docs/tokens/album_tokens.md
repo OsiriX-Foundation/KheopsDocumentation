@@ -8,7 +8,7 @@ permalink: /docs/tokens/album_tokens
 
 # Album Tokens
 
-Album Tokens give access to DICOM data within specific album. They are designed to give third-party applications access to the contents of an album. When a third party application uses the token to authenticate with the Kheops DICOMweb endpoint, the album will appear as the content of a DICOMweb PACS to the thrid-party application. For more technical information see using tokens with [cURL](/docs/tokens/curl)
+Album Tokens give access to DICOM data within specific album. They are designed to give third-party applications access to the contents of an album. When a third party application uses the token to authenticate with the Kheops DICOMweb endpoint, the album will appear as the content of a DICOMweb PACS to the third-party application. For more technical information see using tokens with [cURL](/docs/tokens/curl)
 
 In order to create a new token:
 * Open an album.

@@ -14,7 +14,7 @@ To create a new album click on the **+ New album** button in the album list.
 
 ![Click New Album](/img/click_new_album.png)
 
-The new album panel will new appear giving the oppertunity to configure the new album. Once configuration is complete, click on the **Create** button.
+The new album panel will new appear giving the opportunity to configure the new album. Once configuration is complete, click on the **Create** button.
 
 ![New Album](/img/new_album.png)
 
@@ -22,7 +22,7 @@ The new album panel will new appear giving the oppertunity to configure the new 
 |:----------|-------------|
 | Album Name | A name that will be displayed for the album |
 | Album Description | A description that will be displayed above the list of studies |
-| Users | Album users to add immediatly at creation of the album. |
+| Users | Album users to add immediately at creation of the album. |
 
 The Album user setting configure the restrictions applied to non-data steward users.
 

@@ -21,7 +21,7 @@ It is possible to connect a Kheops album directly to third-party applications th
 * Click on the *User* icon to enter the token generated above as the password. Only the password is used by Kheops, the username is ignored. ![OsiriX Password](/img/osirix_enter_password.png)
 
 
-## Query/Retreive - Store
+## Query/Retrieve - Store
 
 It is now possible to use OsiriX's standard query, retrieve and store to access the album as a PACS.
 

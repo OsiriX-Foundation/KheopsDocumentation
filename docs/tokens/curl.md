@@ -20,13 +20,13 @@ permalink: /docs/tokens/curl
 ## Using tokens with cURL
 Tokens are OAuth 2.0 Access Tokens that allow a user to access the Kheops API server without authenticating through the Keycloak Authorization Server. 
 
-Tokens can be used to access the Kheops DICOMweb restfull endpoint at `/api` and the wado-uri endpoint at `/api/wado`.
+Tokens can be used to access the Kheops DICOMweb restful endpoint at `/api` and the wado-uri endpoint at `/api/wado`.
 
 There are three ways to use tokens. 
 
 ### OAuth2.0 Access Token
 
-The prefered method is through OAuth 2.0 Bearer Authorization.
+The preferred method is through OAuth 2.0 Bearer Authorization.
 
 ```console
 prompt:~ user$ curl https://demo.kheops.online/api/studies -H "Authorization: Bearer B18jTXCzTrQzj1ZednqHUY"
@@ -42,7 +42,7 @@ prompt:~ user$ curl https://token:B18jTXCzTrQzj1ZednqHUY@demo.kheops.online/api/
 
 ### Link URL
 
-The final strategy to pass the token is directly through the URL. This method is the weakest from a security point of view and should be reserved for situations when compatibility is required with external applications that can not be made to work using the above authorization stratagies. When passing the token in the url the `/api/link/{token}/` endpoint replaces the `/api` endpoint.
+The final strategy to pass the token is directly through the URL. This method is the weakest from a security point of view and should be reserved for situations when compatibility is required with external applications that can not be made to work using the above authorization strategies. When passing the token in the url the `/api/link/{token}/` endpoint replaces the `/api` endpoint.
 
 ```console
 prompt:~ user$ curl https://demo.kheops.online/api/link/B18jTXCzTrQzj1ZednqHUY/studies
@@ -107,7 +107,7 @@ prompt:~ user$ curl "https://demo.kheops.online/api/wado?studyUID=1.3.6.1.4.1.19
 
 ## User token parameters
 
-When using a [user token](/docs/tokens/user_tokens) all studies the user has access to will be returned. In order to specify a specific album or inbox when using a user token it is necessay specify the source using a query parameter. Use `?inbox=true` to specify the inbox. Use `?album={album_id}` to specify the album. The album ID can be found in the URL when viewing and album in the Kheops webUI.
+When using a [user token](/docs/tokens/user_tokens) all studies the user has access to will be returned. In order to specify a specific album or inbox when using a user token it is necessary specify the source using a query parameter. Use `?inbox=true` to specify the inbox. Use `?album={album_id}` to specify the album. The album ID can be found in the URL when viewing and album in the Kheops webUI.
 
 ```console
 prompt:~ user$ curl https://demo.kheops.online/api/studies?inbox=true -H "Authorization: Bearer oTK6mCWsN8RKRzlWtnK8pd"
