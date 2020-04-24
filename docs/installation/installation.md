@@ -36,7 +36,7 @@ At its core KHEOPS is an authorization layer placed in front of a "DICOMweb" cap
 
   ### Keycloak
 
-  KHEOPS has received the most testing using [Keycloak](https://www.keycloak.org) as the OIDC Provider. Instructions for configuring Keycloak are available [here](keycloak).
+  KHEOPS has received the most testing using [Keycloak](https://www.keycloak.org) as the OIDC Provider. Instructions for configuring Keycloak are available [here](installation/keycloak).
 
 - ## PostgreSQL database
 
