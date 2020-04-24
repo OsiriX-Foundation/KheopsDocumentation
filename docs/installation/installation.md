@@ -22,7 +22,7 @@ KHEOPS uses strict DICOMweb APIs to communicate with the backing PACS server, ma
 
 #### DCM4CHEE
 
-KHEOPS has received the most testing using [DCM4CHEE](https://github.com/dcm4che/dcm4chee-arc-light/wiki) as the backing PACS. Since it is the role of KHEOPS to handle authorization and secure access, DC4CHEE is run in an [unsecured configuration](https://github.com/dcm4che/dcm4chee-arc-light/wiki/Run-minimum-set-of-archive-services-on-a-single-host), and is made available only to KHEOPS. 
+KHEOPS has received the most testing using [DCM4CHEE](https://github.com/dcm4che/dcm4chee-arc-light/wiki) as the backing PACS. Since it is the role of KHEOPS to handle authorization and secure access, DCM4CHEE is run in an [unsecured configuration](https://github.com/dcm4che/dcm4chee-arc-light/wiki/Run-minimum-set-of-archive-services-on-a-single-host), and is made available only to KHEOPS. 
 
 When using DCM4CHEE, the required minimum version is 19.1.
 
@@ -34,7 +34,7 @@ When running on Google Cloud Healthcare, KHEOPS will access the DICOMweb Store u
 
 ### OpenID Connect capable Authorization Server
 
-For User authentication, KEOPS behaves as an [OpenID Connect (OIDC)](https://openid.net/connect/) Client. 
+For User authentication, KHEOPS behaves as an [OpenID Connect (OIDC)](https://openid.net/connect/) Client. 
 
 ### Keycloak
 
