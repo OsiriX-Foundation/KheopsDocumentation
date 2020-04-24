@@ -14,7 +14,7 @@ At its core KHEOPS is an authorization layer placed in front of a "DICOMweb" cap
 
 # Dependencies on External Services
 
- ## 1. A DICOMweb Capable PACS
+- ## A DICOMweb Capable PACS
 
   KHEOPS uses strict DICOMweb APIs to communicate with the backing PACS server, making it possible to use any DICOMweb capable PACS. In practice KHEOPS has been tested with DCM4CEE and Google Cloud Platform Healthcare API.
 
@@ -29,8 +29,8 @@ At its core KHEOPS is an authorization layer placed in front of a "DICOMweb" cap
   KHEOPS can also run on Google Cloud Platform using the [Cloud Healthcare API](https://cloud.google.com/healthcare) using [DICOM stores](https://cloud.google.com/healthcare/docs/how-tos/dicom). Unfortunately, DICOM stores within the Cloud Healthcare API [only support a subset](https://cloud.google.com/healthcare/docs/dicom) of DICOMweb. Specific Docker images that work around these limitations are available.
 
   When running on Google Cloud Healthcare, KHEOPS will access the DICOMweb Store using a [Service Account](https://cloud.google.com/iam/docs/service-accounts).
-
-## 2. An OpenID Connect capable Authorization Server
+  
+- ## 2. An OpenID Connect capable Authorization Server
 
   For User authentication, KHEOPS behaves as an [OpenID Connect (OIDC)](https://openid.net/connect/) Client. 
 
@@ -38,7 +38,7 @@ At its core KHEOPS is an authorization layer placed in front of a "DICOMweb" cap
 
   KHEOPS has received the most testing using [Keycloak](https://www.keycloak.org) as the OIDC Provider. Instructions for configuring Keycloak are available [here](installation/keycloak).
 
-## 3. PostgreSQL database
+- ## 3. PostgreSQL database
 
   KHEOPS stores all state to a PostgreSQL database. Versions 9.6, 10, and 12 have been used in the past. Other versions will likely also work.
 
