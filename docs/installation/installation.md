@@ -14,7 +14,7 @@ At its core KHEOPS is an authorization layer placed in front of a "DICOMweb" cap
 
 # Dependencies on External Services
 
-- ## A DICOMweb Capable PACS
+- ## 1. A DICOMweb Capable PACS
 
   KHEOPS uses strict DICOMweb APIs to communicate with the backing PACS server, making it possible to use any DICOMweb capable PACS. In practice KHEOPS has been tested with DCM4CEE and Google Cloud Platform Healthcare API.
 
