@@ -26,7 +26,7 @@ When using DCM4CHEE, the required minimum version is 19.1.
 
 ### Google Cloud Platform
 
-KHEOPS can also run of Google Cloud Platform using the [Cloud Healthcare API](https://cloud.google.com/healthcare) using the [DICOM stores](https://cloud.google.com/healthcare/docs/how-tos/dicom). Unfortunately, DICOM stores within the Cloud Healthcare API [only support a subset](https://cloud.google.com/healthcare/docs/dicom) of the DICOMweb API. Specific Docker images that work around these limitations are available.
+KHEOPS can also run on Google Cloud Platform using the [Cloud Healthcare API](https://cloud.google.com/healthcare) using [DICOM stores](https://cloud.google.com/healthcare/docs/how-tos/dicom). Unfortunately, DICOM stores within the Cloud Healthcare API [only support a subset](https://cloud.google.com/healthcare/docs/dicom) of DICOMweb. Specific Docker images that work around these limitations are available.
 
 When running on Google Cloud Healthcare, KHEOPS will access the DICOMweb Store using a [Service Account](https://cloud.google.com/iam/docs/service-accounts).
 
