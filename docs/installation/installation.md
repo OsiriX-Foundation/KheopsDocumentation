@@ -45,6 +45,7 @@ KHEOPS has received the most testing using [Keycloak](https://www.keycloak.org) 
 KHEOPS stores all state to a PostgreSQL database. Versions 9.6, 10, and 12 have been used in the past. Other versions will likely also work.
 
 ---
+# Architecture Diagram
 
 | ![Architecture](/img/architecture.svg) | 
 |:--:| 
