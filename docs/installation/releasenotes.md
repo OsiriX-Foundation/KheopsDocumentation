@@ -71,12 +71,22 @@ Versions of KHEOPS up to v0.9.2 had a strong dependency on Keycloak. Only the us
 
 #### Notes for upgrading for nonsecure install
 
-- Pass the internal docker network hostname of the Keycloak server as the `KHEOPS_OIDC_PROVIDER` to the *kheops-authorization* Docker container in the *docker-compose.yml* file.
+- Pass the backend docker network hostname of the Keycloak server using the `KHEOPS_OIDC_PROVIDER` environment variable to the *kheops-authorization* Docker container in the *docker-compose.yml* file.
 
   ``` yaml
       environment:
-        KHEOPS_OIDC_PROVIDER: http://keycloak:8080/auth/realms/kheops
+        KHEOPS_OIDC_PROVIDER:http://keycloak:8080/auth/realms/kheops
   ```
+
+- Pass the frontend URL to the *keycloak* container using the `KEYCLOAK_FRONTEND_URL` environment variable in the *docker-compose.yml* file
+
+  ``` yaml
+      environment:
+        KEYCLOAK_FRONTEND_URL: http://127.0.0.1:8080/auth
+  ```
+
+- Remove the `KHEOPS_KEYCLOAK_URI` environment variable from `kheops-ui` in the *docker-compose.yml* file.
+
 - Use the *osirixfoundation/kheops-authorization:v0.9.3-noissuer* image for the *kheops-authorization* container.
 
 
