@@ -54,7 +54,7 @@ A KHEOPS instance consists of the KHEOPS Docker containers interacting with the 
 
 - ## A DICOMweb Capable PACS
 
-  KHEOPS uses strict DICOMweb APIs to communicate with the backing PACS server, making it possible to use any DICOMweb capable PACS. In practice KHEOPS has been tested with DCM4CEE and Google Cloud Platform Healthcare API.
+  KHEOPS uses strict DICOMweb APIs to communicate with the backing PACS server, making it possible to use any DICOMweb capable PACS. In practice KHEOPS has been tested with DCM4CHEE and Google Cloud Platform Healthcare API.
 
   ### DCM4CHEE
 
