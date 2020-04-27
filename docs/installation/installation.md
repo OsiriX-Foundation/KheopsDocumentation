@@ -10,6 +10,24 @@ permalink: /docs/installation
 
 At its core KHEOPS is an authorization layer placed in front of a "DICOMweb" capable PACS. KHEOPS is composed of multiple docker containers typically orchestrated together using Docker-Compose or Kubernetes.
 
+Below are instruction for getting a basic instance of KHEOPS up and running. This configuration does not provide security. In order to be properly secured, the KHEOPS and Keycloak must be placed behind TLS (https) connections and the Keycloak configuration must be updated. Nevertheless, this install with provide a starting point that can be modified as needed for the local environment.
+
+1. Install Docker
+2. Install Docker-Compose
+3. Make sure that the current user is in the `docker` group.
+4. Run the following command:
+
+```shell
+bash <(curl -sL https://raw.githubusercontent.com/OsiriX-Foundation/KheopsOrchestration/insecure-install-v0.9.4/kheopsinstall.sh)
+```
+
+Once installed Keycloak will be available at [http://127.0.0.1:8080](http://127.0.0.1:8080), and KHEOPS will be available at [http://127.0.0.1](http://127.0.0.1).
+
+
+**notes**
+- On MacOS, the default Docker memory limit of 2GB is not sufficient. 4GB is safer. 
+- Also on MacOS, Safari does not trust connections to 127.0.0.1, so when loading a study in the OHIF viewer (which is loaded with https), Safari considers refuses the mixed security connection. Chrome respects the standards and considers connections to 127.0.0.1 to be secure so this issue does not occur.
+
 ---
 
 # Dependencies on External Services

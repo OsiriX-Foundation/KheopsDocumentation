@@ -10,7 +10,7 @@ permalink: /docs/installation/releasenotes
 
 KHEOPS is composed of a number of Docker Images. All the docker images belonging to a single version and meant to run together are taged with the same version number. As a general rule, upgrading versions is simply a matter up updating the tag on the docker images. **Addition steps** that need to be performed are detailed below. KHEOPS uses [Liquibase](https://www.liquibase.org) to manage the database schema, and the database will be automatically upgraded.
 
-#### As with any ungrade - make sure to perform a backup of the database used by KHEOPS before performing an upgrade.
+#### As with any upgrade - make sure to perform a backup of the database used by KHEOPS before performing an upgrade.
 
 ---
 
@@ -30,7 +30,7 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
 - Docker secret `kheops_keycloak_clientsecret` is no longer used.
 - Docker secret `kheops_metric_ressource_password` is no longer used.
   #### Note when removing secrets - don't forget to remove references to secrets in the *docker-compose.yml*.
-- The Keycloak *kheopsAuthorization* Serivce Account is no longer used.
+- The Keycloak *kheopsAuthorization* Service Account is no longer used.
 
 ---
 
@@ -87,7 +87,7 @@ Versions of KHEOPS up to v0.9.2 had a strong dependency on Keycloak. Only the us
 
 - Remove the `KHEOPS_KEYCLOAK_URI` environment variable from `kheops-ui` in the *docker-compose.yml* file.
 
-- Use the *osirixfoundation/kheops-authorization:v0.9.3-noissuer* image for the *kheops-authorization* container.
+- The *noissuer* tag for the *osirixfoundation/kheops-authorization* image for the *kheops-authorization* container is no longer needed.
 
 
 ## Older versions
