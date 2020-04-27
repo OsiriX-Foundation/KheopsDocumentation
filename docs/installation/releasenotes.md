@@ -42,7 +42,7 @@ Versions of KHEOPS up to v0.9.2 had a strong dependency on Keycloak. Only the us
 
  Starting with v0.9.4, KHEOPS uses exclusively [OpenID Connect (OIDC)](https://openid.net/connect/) for user authentication. v0.9.3 is a transition release that is still dependent on Keycloak, and retrieves the user names and emails from Keycloak at startup.
 
- While we still expect Keycloak to be used in the majority of cases. It will now be possible to directly use other 
+ While we still expect Keycloak to be used in the majority of cases. It will now be possible to use other OIDC providers directly, without installing Keycloak.
 
 ### Changes
 - Loads user profile information from Keycloak at startup
@@ -55,7 +55,7 @@ Versions of KHEOPS up to v0.9.2 had a strong dependency on Keycloak. Only the us
 
   The full path to the OIDC provider must be set. Its value will typically be `${KHEOPS_KEYCLOAK_URI}/auth/realms/${KHEOPS_KEYCLOAK_REALMS}`
   
-  For example: If the `KHEOPS_KEYCLOAK_URI` is `https://keycloak.kheops.online`, and the `KHEOPS_KEYCLOAK_REALMS` is "demo", the value of `KHEOPS_OIDC_PROVIDER` would be `https://keycloak.kheops.online/auth/realms/demo`.
+  For example: If the `KHEOPS_KEYCLOAK_URI` is `https://keycloak.kheops.online`, and the `KHEOPS_KEYCLOAK_REALMS` is `demo`, the value of `KHEOPS_OIDC_PROVIDER` would be `https://keycloak.kheops.online/auth/realms/demo`.
 
 - Environment variables `KHEOPS_ROOT_SCHEME`, `KHEOPS_ROOT_HOST`, and `KHEOPS_ROOT_PORT` are replaced by `KHEOPS_ROOT_URL`.
 
