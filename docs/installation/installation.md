@@ -16,7 +16,7 @@ Below are instruction for getting a basic instance of KHEOPS up and running. Thi
 
 1. Install Docker
 2. Install Docker-Compose
-3. Make sure that the current user is in the `docker` group.
+3. Make sure that the current user is in the *docker* group.
 4. Run the following command:
 
 ```shell
