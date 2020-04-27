@@ -87,7 +87,7 @@ Versions of KHEOPS up to v0.9.2 had a strong dependency on Keycloak. Only the us
 
 - Remove the `KHEOPS_KEYCLOAK_URI` environment variable from `kheops-ui` in the *docker-compose.yml* file.
 
-- The *noissuer* tag for the *osirixfoundation/kheops-authorization* image for the *kheops-authorization* container is no longer needed.
+- The `-noissuer` tag for the *osirixfoundation/kheops-authorization* image is no longer needed.
 
 
 ## Older versions
