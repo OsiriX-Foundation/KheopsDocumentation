@@ -36,7 +36,7 @@ Once installed Keycloak will be available at [http://127.0.0.1:8080](http://127.
 
 ## Making it secure
 
-In a production environment, Keycloak should be set up separately. KHEOPS interacts with Keycloak using the Authorization Code flow. Please refer to the Keycloak documentation for instruction on how to properly secure Keycloak. KHEOPS specific Keycloak configuration steps are described [here](installation/keycloak). Keycloak must be configured to work using a secured TLS (https) connection.
+In a production environment, Keycloak should be setup separately. KHEOPS interacts with Keycloak using the Authorization Code flow. Please refer to the Keycloak documentation for instruction on how to properly secure Keycloak. KHEOPS specific Keycloak configuration steps are described [here](installation/keycloak). Keycloak must be configured to work using a secured TLS (https) connection.
 
 A Let's Encrypt enabled reverse proxy for KHEOPS is available . To use it, replace the `-insecure` portion of the tag on the the `kheops-reverse-proxy` with `-letsencrypt`. When using the Let's Encrypt enabled version of the reverse proxy, the `KHEOPS_ROOT_URL` environment variable must be a URL accessible from the general internet, and the `LETS_ENCRYPT_EMAIL` environment variable must be set to the email with which the domain will be registered. The following ports must be mapped for the *kheops-reverse-proxy* in the *docker-compose.yml* configuration file.
 
