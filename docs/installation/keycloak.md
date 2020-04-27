@@ -22,7 +22,7 @@ Set reasonable values for the *Valid Redirect URIs* and *Web Origins*. The wildc
 
 ## 2. Client Scope (*kheops*)
 
-KHEOPS will accept JWT Access Tokens issued by Keycloak that contain "*kheops*" within the "*scope*" claim. In order for the KHEOPS UI to display the user's name and email address, these need to be present in the Access Tokens.
+KHEOPS will accept JWT Access Tokens issued by Keycloak that contain "*kheops*" within the "*scope*" claim.
 
 ### Example for adding the "*kheops*" *scope* claim.
 
