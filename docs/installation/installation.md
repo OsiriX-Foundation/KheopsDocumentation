@@ -6,9 +6,11 @@ has_children: true
 permalink: /docs/installation
 ---
 
-# Getting started with  local installation
+# Getting started with a local installation
 
-At its core KHEOPS is an authorization layer placed in front of a "DICOMweb" capable PACS. KHEOPS is composed of multiple docker containers typically orchestrated together using Docker-Compose or Kubernetes.
+At its core KHEOPS is an authorization layer placed in front of a DICOMweb capable PACS. KHEOPS is composed of multiple docker containers typically orchestrated together using Docker-Compose or Kubernetes.
+
+## A simple insecure local server
 
 Below are instruction for getting a basic instance of KHEOPS up and running. This configuration does not provide security. In order to be properly secured, the KHEOPS and Keycloak must be placed behind TLS (https) connections and the Keycloak configuration must be updated. Nevertheless, this install with provide a starting point that can be modified as needed for the local environment.
 
@@ -29,6 +31,12 @@ Once installed Keycloak will be available at [http://127.0.0.1:8080](http://127.
 **notes**
 - On MacOS, the default Docker memory limit of 2GB is not sufficient. 4GB is safer. 
 - Also on MacOS, Safari does not trust connections to 127.0.0.1, so when loading a study in the OHIF viewer (which is loaded with https), Safari considers refuses the mixed security connection. Chrome respects the standards and considers connections to 127.0.0.1 to be secure so this issue does not occur.
+
+## Making it secure
+
+In a production environment, Keycloak should be set up separately. KHEOPS interacts with Keycloak using the Authorization Code flow. Please refer to the Keycloak documentation for instruction on how to properly secure Keycloak. KHEOPS specific Keycloak configuration steps are described [here](installation/keycloak).
+
+A Let's Encrypt enabled reverse proxy for KHEOPS is available. To use it, replace the ```-insecure``` portion of the tag on the the ```kheops-reverse-proxy``` with ```-letsencrypt```. When using the Let's Encrypt enables version of the reverse proxy, the ```KHEOPS_ROOT_URL``` environment variable must be a URL accessible from the general internet, and the ```LETS_ENCRYPT_EMAIL``` environment variable must be set to the email with which the domain will be registered.
 
 ---
 
