@@ -16,8 +16,8 @@ We are always happy to respond to any questions. Feel free to contact us at [con
 
 Below are instruction for getting a basic instance of KHEOPS up and running. This configuration does not provide security. In order to be properly secured, the KHEOPS and Keycloak must be placed behind TLS (https) connections and the Keycloak configuration must be updated. Nevertheless, this install with provide a starting point that can be modified as needed for the local environment.
 
-1. Install Docker
-2. Install Docker-Compose
+1. Install Docker (latest version)
+2. Install Docker-Compose (latest version)
 3. Make sure that the current user is in the *docker* group.
 4. Run the following command:
 
