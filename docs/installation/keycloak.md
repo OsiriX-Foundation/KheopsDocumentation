@@ -32,7 +32,7 @@ Create a new Client Scope that includes *kheops* in the token scope.
 Assign the new kheops Client Scope as a default scope for the login client.
 ![Add Scope Claim](/img/keycloak_kheops_add_scope.png)
 
-## 4. Logging Impersonations
+## 3. Logging Impersonations
 
 In order for KHEOPS' audit logging to keep track of actions that were executed by an administrator who has impersonated a user, KHEOPS uses the *"act"* claim in the Access Token, as defined in the [OAuth 2.0 Token Exchange](https://tools.ietf.org/html/draft-ietf-oauth-token-exchange-19#section-4.1) draft RFC.
 

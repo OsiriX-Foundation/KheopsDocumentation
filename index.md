@@ -2,14 +2,14 @@
 layout: default
 title: Home
 nav_order: 1
-description: "Kheops DICOMweb based sharing platform"
+description: "KHEOPS DICOMweb based sharing platform"
 permalink: /
 ---
 
-# Kheops
+# KHEOPS
 {: .fs-9 }
 
-Easily share DICOM data with colleages and remote collaborators.
+Easily share DICOM data with colleagues and remote collaborators.
 {: .fs-6 .fw-300 }
 
 Create customized online workflows centered around DICOM studies.
@@ -19,9 +19,9 @@ Create customized online workflows centered around DICOM studies.
 
 ---
 
-## The Kheops platform
+## The KHEOPS platform
 
-Kheops is a platform built to facilitate sharing of data in research settings.
+KHEOPS is a platform built to facilitate sharing of data in research settings.
 
 ![Landing Page](/img/landing_page.png)
 
