@@ -27,8 +27,10 @@ bash <(curl -sL https://raw.githubusercontent.com/OsiriX-Foundation/KheopsOrches
 
 This script will create a new directory named `kheops` in which it will download docker-compose configuration files, a keycloak realm configuration, and generate the necessary secrets.
 
-Once installed, Keycloak will be available at [http://127.0.0.1:8080](http://127.0.0.1:8080), and KHEOPS will be available at [http://127.0.0.1](http://127.0.0.1).
-
+Once installed, Keycloak will be available at [http://127.0.0.1:8080](http://127.0.0.1:8080), and
+KHEOPS will be available at [http://127.0.0.1](http://127.0.0.1). When you first connect to KHEOPS
+you will be redirected to the Keycloak login screen. The `Resister` link will be available to
+create a new KHEOPS account. 
 
 **notes**
 - On MacOS, the default Docker memory limit of 2GB is not sufficient. 4GB is safer. 
