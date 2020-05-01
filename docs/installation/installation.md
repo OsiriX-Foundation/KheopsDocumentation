@@ -29,7 +29,7 @@ This script will create a new directory named `kheops` in which it will download
 
 Once installed, Keycloak will be available at [http://127.0.0.1:8080](http://127.0.0.1:8080), and
 KHEOPS will be available at [http://127.0.0.1](http://127.0.0.1). When you first connect to KHEOPS
-you will be redirected to the Keycloak login screen. The `Resister` link will be available to
+you will be redirected to the Keycloak login screen. The `Register` link will be available to
 create a new KHEOPS account. 
 
 **notes**
