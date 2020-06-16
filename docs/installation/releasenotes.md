@@ -14,6 +14,20 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
 
 ---
 
+## v0.9.5
+
+### Changes
+
+- Many UI fixes.
+
+- Fixed issue where the UI might not load after a long idle time.
+
+### Upgrade
+
+- No additional upgrade steps are necessary
+
+---
+
 ## v0.9.4
 
 **When upgrading, make sure to install and run v0.9.3 prior to installing v0.9.4.**
