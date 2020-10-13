@@ -104,14 +104,14 @@ It is possible to use a custom TLS certificate. To use it, replace the `-insecur
           - fullchain1.pem
         ```
 
-  6. In secrets section, add the following secrets:
+6. In secrets section, add the following secrets:
 
-        ```yaml
-        privkey1.pem:
-          file: secrets/privkey1.pem
-        fullchain1.pem:
-          file: secrets/fullchain1.pem
-        ```
+    ```yaml
+    privkey1.pem:
+      file: secrets/privkey1.pem
+    fullchain1.pem:
+      file: secrets/fullchain1.pem
+    ```
 
 ---
 
