@@ -54,14 +54,18 @@ A Let's Encrypt enabled reverse proxy for KHEOPS is available. To use it, replac
     - Replace the `-insecure` portion of the tag with `-letsencrypt`.
     - Add an extra_hosts section that loopbacks the root.
 
-          extra_hosts:
-            - "your.domain.here:127.0.0.1"
+        ```yaml
+        extra_hosts:
+          - "your.domain.here:127.0.0.1"
+        ```
 
     - Modify the ports section as follows.
 
-          ports:
-            - "80:80"
-            - "443:443"
+        ```yaml
+        ports:
+          - "80:80"
+          - "443:443"
+        ```
 
 ### Using a custom certificate
 
@@ -79,28 +83,35 @@ It is possible to use a custom TLS certificate. To use it, replace the `-insecur
     - Remove the `-insecure` portion of the tag.
     - Add an extra_hosts section that loopbacks the root.
 
-          extra_hosts:
-            - "your.domain.here:127.0.0.1"
+        ```yaml
+        extra_hosts:
+          - "your.domain.here:127.0.0.1"
+        ```
 
     - Modify the ports section as follows.
 
-          ports:
-            - "80:80"
-            - "443:443"
+        ```yaml
+        ports:
+          - "80:80"
+          - "443:443"
+        ```
 
     - Add a secrets section.
 
-          secrets:
-            - privkey1.pem
-            - fullchain1.pem
+        ```yaml
+        secrets:
+          - privkey1.pem
+          - fullchain1.pem
+        ```
 
   6. In secrets section, add the following secrets:
 
-
-         privkey1.pem:
-           file: secrets/privkey1.pem
-         fullchain1.pem:
-           file: secrets/fullchain1.pem
+        ```yaml
+        privkey1.pem:
+          file: secrets/privkey1.pem
+        fullchain1.pem:
+          file: secrets/fullchain1.pem
+        ```
 
 ---
 
