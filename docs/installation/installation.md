@@ -38,15 +38,69 @@ create a new KHEOPS account.
 
 ## Making it secure
 
-In a production environment, Keycloak should be setup separately. KHEOPS interacts with Keycloak using the Authorization Code flow. Please refer to the Keycloak documentation for instruction on how to properly secure Keycloak. KHEOPS specific Keycloak configuration steps are described [here](installation/keycloak). Keycloak must be configured to work using a secured TLS (https) connection.
+In a production environment, Keycloak should be setup separately. KHEOPS interacts with Keycloak using the Authorization Code flow. Please refer to the Keycloak documentation for instruction on how to properly secure Keycloak. KHEOPS specific Keycloak configuration steps are described [here](installation/keycloak). Keycloak must be configured to work using a secured TLS (https) connection. The environement variables 
 
-A Let's Encrypt enabled reverse proxy for KHEOPS is available. To use it, replace the `-insecure` portion of the tag on the the `kheops-reverse-proxy` with `-letsencrypt`. When using the Let's Encrypt enabled version of the reverse proxy, the `KHEOPS_ROOT_URL` environment variable must be a URL accessible from the general internet, and the `LETS_ENCRYPT_EMAIL` environment variable must be set to the email with which the domain will be registered. The following ports must be mapped for the *kheops-reverse-proxy* in the *docker-compose.yml* configuration file.
+### Using Let's Encrypt
 
-```yaml
-    ports:
-      - "80:80"
-      - "443:443"
-```
+A Let's Encrypt enabled reverse proxy for KHEOPS is available. To use it, replace the `-insecure` portion of the tag on the the `kheops-reverse-proxy` with `-letsencrypt`. When using the Let's Encrypt enabled version of the reverse proxy, the `KHEOPS_ROOT_URL` environment variable must be a URL accessible from the general internet, and the `LETS_ENCRYPT_EMAIL` environment variable must be set to the email with which the domain will be registered.
+
+1. In the `docker-compose.env` file change the following:
+    - Change the `KHEOPS_ROOT_URL` to your domain.
+    - Change the `KHEOPS_OIDC_PROVIDER` to your secured Keycloak or other OIDC Provider.
+    - If needed, change the `KHEOPS_UI_CLIENTID`.
+2. In the ``kheops-authorization`` section of the `docker-compose.yml` file change the following:
+    - Remove the `KHEOPS_OIDC_PROVIDER` environment variable.
+3. In the ``kheops-reverse-proxy`` section of the `docker-compose.yml` file change the following:
+    - Replace the `-insecure` portion of the tag with `-letsencrypt`.
+    - Add an extra_hosts section that loopbacks the root.
+
+          extra_hosts:
+            - "your.domain.here:127.0.0.1"
+
+    - Modify the ports section as follows.
+
+          ports:
+            - "80:80"
+            - "443:443"
+
+### Using a custom certificate
+
+It is possible to use a custom TLS certificate. To use it, replace the `-insecure` portion of the tag on the the `kheops-reverse-proxy`.
+
+1. Place the certificate private key file in `secrets/privkey1.pem`.
+2. Place the certificate chain file in `secrets/fullchain1.pem`.
+3. In the `docker-compose.env` file change the following:
+    - Change the `KHEOPS_ROOT_URL` to your domain.
+    - Change the `KHEOPS_OIDC_PROVIDER` to your secured Keycloak or other OIDC Provider.
+    - If needed, change the `KHEOPS_UI_CLIENTID`.
+4. In the ``kheops-authorization`` section of the `docker-compose.yml` file change the following:
+    - Remove the `KHEOPS_OIDC_PROVIDER` environment variable.
+5. In the ``kheops-reverse-proxy`` section of the `docker-compose.yml` file change the following:
+    - Remove the `-insecure` portion of the tag.
+    - Add an extra_hosts section that loopbacks the root.
+
+          extra_hosts:
+            - "your.domain.here:127.0.0.1"
+
+    - Modify the ports section as follows.
+
+          ports:
+            - "80:80"
+            - "443:443"
+
+    - Add a secrets section.
+
+          secrets:
+            - privkey1.pem
+            - fullchain1.pem
+
+  6. In secrets section, add the following secrets:
+
+
+         privkey1.pem:
+           file: secrets/privkey1.pem
+         fullchain1.pem:
+           file: secrets/fullchain1.pem
 
 ---
 
