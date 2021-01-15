@@ -42,7 +42,7 @@ In a production environment, Keycloak should be setup separately. KHEOPS interac
 
 ### Using Let's Encrypt
 
-A Let's Encrypt enabled reverse proxy for KHEOPS is available. To use it, replace the `-insecure` portion of the tag on the the `kheops-reverse-proxy` with `-letsencrypt`. When using the Let's Encrypt enabled version of the reverse proxy, the `KHEOPS_ROOT_URL` environment variable must be a URL accessible from the general internet, and the `LETS_ENCRYPT_EMAIL` environment variable must be set to the email with which the domain will be registered.
+A Let's Encrypt enabled reverse proxy for KHEOPS is available. To use it, replace the `-insecure` portion of the tag on the the `kheops-reverse-proxy` with `-letsencrypt`. When using the Let's Encrypt enabled version of the reverse proxy, the `KHEOPS_ROOT_URL` environment variable must be a URL accessible from the general internet, and the `LETS_ENCRYPT_EMAIL` environment variable must be set to the email with which the domain will be registered. Add a volume that will store the Let's Encrypt certificates in order to avoid having Let's Encrypt re-issue certificates every time the container is run.
 
 1. In the `docker-compose.env` file change the following:
     - Change the `KHEOPS_ROOT_URL` to your domain.
@@ -66,6 +66,18 @@ A Let's Encrypt enabled reverse proxy for KHEOPS is available. To use it, replac
           - "80:80"
           - "443:443"
         ```
+        
+    - Modify the volumes section of the container as follows.
+        ```yaml
+        volumes:
+          - letsencrypt:/etc/letsencrypt
+        ```
+
+    - Add the letsencrypt volume to the list of volumes to create at the bottom of the file.
+         ```yaml
+         volumes:
+           letsencrypt:
+         ```
 
 ### Using a custom certificate
 
