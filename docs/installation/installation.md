@@ -38,7 +38,7 @@ create a new KHEOPS account.
 
 ## Making it secure
 
-In a production environment, Keycloak should be setup separately. KHEOPS interacts with Keycloak using the Authorization Code flow. Please refer to the Keycloak documentation for instruction on how to properly secure Keycloak. KHEOPS specific Keycloak configuration steps are described [here](installation/keycloak). Keycloak must be configured to work using a secured TLS (https) connection. The environement variables 
+In a production environment, Keycloak should be set up on a separate domain. KHEOPS interacts with Keycloak using the Authorization Code flow. Please refer to the Keycloak documentation for instruction on how to properly secure Keycloak. KHEOPS specific Keycloak configuration steps are described [here](installation/keycloak). Keycloak must be configured to work using a secured TLS (https) connection. The environement variables 
 
 ### Using Let's Encrypt
 
