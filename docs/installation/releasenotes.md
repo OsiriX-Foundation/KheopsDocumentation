@@ -34,7 +34,9 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
 
 - Fix silent login (?????à confirmer????? mais c'est dans le slack v095-v096)
 
-- Mutation : 
+- Removing filebeat and metricbeat from container (kheops-authorization, kheops-reverse-proxy and pacs-authorization-proxy). Now one filebeat and one filebeat are used as a sidecar container (kheops-authorization-metricbeat and kheops-filebeat-sidecar)
+
+- (API) Mutation : 
   - Can be filtered out by (user, seriesUID, studyUID, capabilityTokenID, date, type, ...) [(link to the doc)](https://github.com/OsiriX-Foundation/KheopsAuthorization/wiki/Get-a-list-of-events-(comments-and-mutations))
   - Field `origin` renamed to `source`
   - Field `capability` renamed to `capability_token`
@@ -45,7 +47,10 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
   - Field `series` is now an array with only one series when the mutation type is `ADD_SERIES` and `REMOVE_SERIES`.
   - Add boolean field `is_prensent_in_album` for each series. It indicate if the series is present in the album.
 
-- Webhook : 
+- (API) Comments :
+  - Field `origin` renamed to `source`
+
+- (API) Webhook : 
   - Update when a webhook is triggered (for new series). Now a webhook is sent at the end of the upload, not for eatch instance. We cache a list of the new series and if after a while we don't receive any instances we send the webhook.
   - New webhook for remove_series and delete_album. [(link to the doc)](https://github.com/OsiriX-Foundation/KheopsAuthorization/wiki#webhooks)
   - If new instances are uploaded to Kheops a webhook is sent for each album containing this series.
@@ -54,10 +59,37 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
   - New table `event_series`
   - Remove column `series_fk` in table `events`
 
+- Log :
+  - kheops-authorizion : the file /usr/local/tomcat/conf/logging.properties use now logs rotation of 5 days (90 before)
 
 ### Upgrade
 
-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+- Environment variable `KHEOPS_AUTHORIZATION_ENABLE_ELASTIC` is no longer used.
+- Environment variable `KHEOPS_AUTHORIZATION_ELASTIC_INSTANCE` is no longer used.
+- Environment variable `KHEOPS_AUTHORIZATION_LOGSTASH_URL ` is no longer used.
+- Environment variable `KHEOPS_REVERSE_PROXY_ENABLE_ELASTIC` is no longer used.
+- Environment variable `KHEOPS_REVERSE_PROXY_ELASTIC_INSTANCE` is no longer used.
+- Environment variable `KHEOPS_REVERSE_PROXY_LOGSTASH_URL ` is no longer used.
+- Environment variable `KHEOPS_PEP_ENABLE_ELASTIC` is no longer used.
+- Environment variable `KHEOPS_PEP_ELASTIC_INSTANCE` is no longer used.
+- Environment variable `KHEOPS_PEP_LOGSTASH_URL ` is no longer used.
+
+- New *mandatory* environment variable `KHEOPS_INSTANCES` for *kheops-authorization-metricbeat* container and *kheops-filebeat-sidecar*
+- New *mandatory* environment variable `KHEOPS_LOGSTASH_URL` for *kheops-authorization-metricbeat* container and *kheops-filebeat-sidecar*
+
+- The *kheops-authorization-metricbeat* container must be connect to the *kheops-authorization* container
+- Add a volume beetwen *kheops-filebeat-sidecar* and *kheops-authorization* /kheops/authorization/logs /usr/local/tomcat/logs
+- Add a volume beetwen *kheops-filebeat-sidecar* and *kheops-reverse-proxy* /kheops/reverseproxy/logs /var/log/nginx
+- Add a volume beetwen *kheops-filebeat-sidecar* and *pacs-authorization-proxy* /kheops/pep/logs /var/log/nginx
+
+- Add a logging driver to each container 
+```
+logging:
+  driver: json-file
+  options:
+    max-file: "10"
+    max-size: "10m"
+```
 
 ---
 
