@@ -148,9 +148,12 @@ It is possible to use a custom TLS certificate. To use it, replace the `-insecur
 **In the *docker-compose.env* file : **
 - Edit *KHEOPS_LOGSTASH_URL* with your own logstash url
 
-**In your logstash**
+**In your ELK**
 
 TODO
+- Import logstash config
+- Import index pattern, visualisation and dashboard in your Kibana
+- Configure the rollup job `rollup_job_kheops_metrics`
 
 # Dependencies on External Services
 
