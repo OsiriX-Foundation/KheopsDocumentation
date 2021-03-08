@@ -142,7 +142,7 @@ It is possible to use a custom TLS certificate. To use it, replace the `-insecur
 
 **In the *docker-compose.yml* file :**
 - Remove services : *kibana, elasticsearch and logstash*
-- Remove network : *beats_network* in all the *docker-compose.yml*
+- Remove network : *elk_network* in all the *docker-compose.yml*
 - Remove volume : *elastic_data* in all the *docker-compose.yml*
 
 **In the *docker-compose.env* file : **
