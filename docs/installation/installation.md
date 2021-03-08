@@ -8,13 +8,13 @@ permalink: /docs/installation
 
 # Getting started with a local installation
 
-At its core KHEOPS is an authorization layer placed in front of a DICOMweb capable PACS. KHEOPS is composed of multiple docker containers typically orchestrated  using Docker-Compose or Kubernetes.
+At its core KHEOPS is an authorization layer placed in front of a DICOMweb capable PACS. KHEOPS is composed of multiple docker containers typically orchestrated using Docker-Compose or Kubernetes.
 
 We are always happy to respond to any questions. Feel free to contact us at [contact@kheops.online](mailto:contact@kheops.online).
 
 ## A simple insecure local server
 
-Below are instruction for getting a basic instance of KHEOPS up and running. This configuration does not provide security. In order to be properly secured,  KHEOPS and Keycloak must be placed behind TLS (https) connections and the Keycloak configuration must be updated. Nevertheless, this install will provide a starting point that can be modified as needed for the local environment.
+Below are instruction for getting a basic instance of KHEOPS up and running. This configuration does not provide security. In order to be properly secured, KHEOPS and Keycloak must be placed behind TLS (https) connections and the Keycloak configuration must be updated. Nevertheless, this install will provide a starting point that can be modified as needed for the local environment.
 
 1. Install Docker (latest version)
 2. Install Docker-Compose (latest version)
