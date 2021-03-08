@@ -136,7 +136,7 @@ It is possible to use a custom TLS certificate. To use it, replace the `-insecur
 - Remove volumes : *elastic_data, logs_pep, logs_reverse_proxy, logs_auth* in all the *docker-compose.yml*
 
 **In the *docker-compose.env* file :** 
-- Remove *KHEOPS_INSTANCES* *KHEOPS_LOGSTASH_URL*
+- Remove *KHEOPS_INSTANCES* and *KHEOPS_LOGSTASH_URL*
 
 ### Sending logs to an ELK in production
 
@@ -151,9 +151,9 @@ It is possible to use a custom TLS certificate. To use it, replace the `-insecur
 **In your ELK**
 
 TODO
-- Import logstash config
-- Import index pattern, visualisation and dashboard in your Kibana
-- Configure the rollup job `rollup_job_kheops_metrics`
+- Import logstash config from URL_TODO
+- Import index pattern, visualisation and dashboard in your Kibana from URL_TODO
+- Configure the rollup job `rollup_job_kheops_metrics` FROM URL_TODO
 
 # Dependencies on External Services
 
