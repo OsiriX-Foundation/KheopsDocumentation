@@ -30,7 +30,7 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
 
 ### Changes
 
-- Using autocomplete for user email in the user interface (send add to an album)
+- Using autocomplete for user email in the user interface (send, add to an album)
 
 - Fix silent login (?????à confirmer????? mais c'est dans le slack v095-v096)
 
