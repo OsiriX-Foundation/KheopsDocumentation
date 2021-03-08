@@ -69,10 +69,10 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
 - Environment variable `KHEOPS_AUTHORIZATION_LOGSTASH_URL ` is no longer used.
 - Environment variable `KHEOPS_REVERSE_PROXY_ENABLE_ELASTIC` is no longer used.
 - Environment variable `KHEOPS_REVERSE_PROXY_ELASTIC_INSTANCE` is no longer used.
-- Environment variable `KHEOPS_REVERSE_PROXY_LOGSTASH_URL ` is no longer used.
+- Environment variable `KHEOPS_REVERSE_PROXY_LOGSTASH_URL` is no longer used.
 - Environment variable `KHEOPS_PEP_ENABLE_ELASTIC` is no longer used.
 - Environment variable `KHEOPS_PEP_ELASTIC_INSTANCE` is no longer used.
-- Environment variable `KHEOPS_PEP_LOGSTASH_URL ` is no longer used.
+- Environment variable `KHEOPS_PEP_LOGSTASH_URL` is no longer used.
 
 - New *mandatory* environment variable `KHEOPS_INSTANCES` for *kheops-authorization-metricbeat* container and *kheops-filebeat-sidecar*
 - New *mandatory* environment variable `KHEOPS_LOGSTASH_URL` for *kheops-authorization-metricbeat* container and *kheops-filebeat-sidecar*
