@@ -38,8 +38,8 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
 
 - (API) Mutation : 
   - Can be filtered out by (user, seriesUID, studyUID, capabilityTokenID, date, type, ...) [(link to the doc)](https://github.com/OsiriX-Foundation/KheopsAuthorization/wiki/Get-a-list-of-events-(comments-and-mutations))
-  - Field `origin` renamed to `source`
-  - Field `capability` renamed to `capability_token`
+  - Field `origin` renamed to `source`.
+  - Field `capability` renamed to `capability_token`.
   - Add boolean field `is_admin` in `source` if the user is always a member of the album.
   - If the Mutaion was made by a report provider or a capability token : the related informations are moved to `source`.
   - `mutation_type=NEW_REPORT` is now `mutation_type=NEW_SERIES` with the `report_provider` in `source`
@@ -48,11 +48,11 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
   - Add boolean field `is_prensent_in_album` for each series. It indicate if the series is present in the album.
 
 - (API) Comments :
-  - Field `origin` renamed to `source`
+  - Field `origin` renamed to `source`.
 
 - (API) Webhook : 
   - Update when a webhook is triggered (for new series). Now a webhook is sent at the end of the upload, not for eatch instance. We cache a list of the new series and if after a while we don't receive any instances we send the webhook.
-  - New webhook for remove_series and delete_album. [(link to the doc)](https://github.com/OsiriX-Foundation/KheopsAuthorization/wiki#webhooks)
+  - New webhook for remove_series and delete_album. [(link to the doc)](https://github.com/OsiriX-Foundation/KheopsAuthorization/wiki#webhooks).
   - If new instances are uploaded to Kheops a webhook is sent for each album containing this series.
 
 - Database : 
@@ -60,7 +60,8 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
   - Remove column `series_fk` in table `events`
 
 - Log :
-  - kheops-authorizion : the file /usr/local/tomcat/conf/logging.properties use now logs rotation of 5 days (90 before)
+  - kheops-authorizion : the file /usr/local/tomcat/conf/logging.properties use now logs rotation of 5 days (90 before).
+  - kheops-reverse-proxy : use logratate inside the container.
 
 ### Upgrade
 
@@ -103,7 +104,7 @@ logging:
 
 ### Upgrade
 
-- No additional upgrade steps are necessary
+- No additional upgrade steps are necessary.
 
 ---
 
@@ -138,7 +139,7 @@ Versions of KHEOPS up to v0.9.2 had a strong dependency on Keycloak. Only the us
  While we still expect Keycloak to be used in the majority of cases. It will now be possible to use other OIDC providers directly, without installing Keycloak.
 
 ### Changes
-- Loads user profile information from Keycloak at startup
+- Loads user profile information from Keycloak at startup.
 - Updates user profile information at each login.
 - UI Improvements.
 
