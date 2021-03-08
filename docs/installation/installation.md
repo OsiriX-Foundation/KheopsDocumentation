@@ -150,7 +150,6 @@ It is possible to use a custom TLS certificate. To use it, replace the `-insecur
 
 **In your ELK**
 
-TODO
 - Import logstash config [here](https://github.com/OsiriX-Foundation/logstash/blob/main/logstash.conf)
 - Import index pattern, visualisation and dashboard in your Kibana from [here](https://github.com/OsiriX-Foundation/kibana-initialize/blob/main/export.ndjson)
 - Configure the rollup job `rollup_job_kheops_metrics` by doing a *PUT* _rollup/job/rollup_job_kheops_metrics with the following json [here](https://github.com/OsiriX-Foundation/kibana-initialize/blob/main/rollup_job_kheops_metrics.json)
