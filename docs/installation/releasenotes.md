@@ -30,14 +30,14 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
 
 ### Changes
 
-- Using autocomplete for user email in the user interface (send, add to an album)
+- Autocomplete for user email address (send, add to an album).
 
-- Fix silent login (?????à confirmer????? mais c'est dans le slack v095-v096)
+- Fix silent login.
 
-- Removing filebeat and metricbeat from container (*kheops-authorization*, *kheops-reverse-proxy* and *pacs-authorization-proxy*). Now one *filebeat* and one *metricbeat* are used as a sidecar container (*kheops-authorization-metricbeat* and *kheops-filebeat-sidecar*).
+- Remove filebeat and metricbeat from containers (*kheops-authorization*, *kheops-reverse-proxy* and *pacs-authorization-proxy*). Now one *filebeat* and one *metricbeat* are used as sidecar containers (*kheops-authorization-metricbeat* and *kheops-filebeat-sidecar*).
 
 - (API) Mutation : 
-  - Can be filtered out by (user, seriesUID, studyUID, capabilityTokenID, date, type, ...) [(link to the doc)](https://github.com/OsiriX-Foundation/KheopsAuthorization/wiki/Get-a-list-of-events-(comments-and-mutations))
+  - Can be filtered by user, seriesUID, studyUID, capabilityTokenID, date, type, ... [(documentation)](https://github.com/OsiriX-Foundation/KheopsAuthorization/wiki/Get-a-list-of-events-(comments-and-mutations))
   - Field `origin` renamed to `source`.
   - Field `capability` renamed to `capability_token`.
   - Add boolean field `is_admin` in `source` if the user is always a member of the album.
@@ -51,17 +51,17 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
   - Field `origin` renamed to `source`.
 
 - (API) Webhook : 
-  - Update when a webhook is triggered (for new series). Now a webhook is sent at the end of the upload, not for eatch instance. We cache a list of the new series and if after a while we don't receive any instances we send the webhook.
-  - New webhook for *remove_series* and *delete_album*. [(link to the doc)](https://github.com/OsiriX-Foundation/KheopsAuthorization/wiki#webhooks).
-  - If new instances are uploaded to Kheops a webhook is sent for each album containing this series.
+  - Update when a webhook is triggered (for new series). Now a webhook is sent at the end of the upload, not for each instance. The webhook is triggered  We cache a list of the new series and if after a while we don't receive any instances we send the webhook.
+  - New webhooks for *remove_series* and *delete_album*. [(documentation)](https://github.com/OsiriX-Foundation/KheopsAuthorization/wiki#webhooks).
+  - If new instances are uploaded to Kheops, a webhook is triggered for each album containing the series.
 
 - Database : 
   - New table `event_series`
   - Remove column `series_fk` in table `events`
 
 - Log :
-  - kheops-authorizion : the file /usr/local/tomcat/conf/logging.properties use now logs rotation of 5 days (90 before).
-  - kheops-reverse-proxy : use logratate inside the container.
+  - kheops-authorizion : the file /usr/local/tomcat/conf/logging.properties rotate after 5 days (90 previously).
+  - kheops-reverse-proxy : use logrotate inside the container.
 
 ### Upgrade
 
@@ -78,7 +78,7 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
 - New *mandatory* environment variable `KHEOPS_INSTANCES` for *kheops-authorization-metricbeat* container and *kheops-filebeat-sidecar*
 - New *mandatory* environment variable `KHEOPS_LOGSTASH_URL` for *kheops-authorization-metricbeat* container and *kheops-filebeat-sidecar*
 
-- The *kheops-authorization-metricbeat* container must be connect to the *kheops-authorization* container.
+- The *kheops-authorization-metricbeat* container must be connected to the *kheops-authorization* container.
 - Add a volume beetwen *kheops-filebeat-sidecar* and *kheops-authorization* /kheops/authorization/logs /usr/local/tomcat/logs.
 - Add a volume beetwen *kheops-filebeat-sidecar* and *kheops-reverse-proxy* /kheops/reverseproxy/logs /var/log/nginx.
 - Add a volume beetwen *kheops-filebeat-sidecar* and *pacs-authorization-proxy* /kheops/pep/logs /var/log/nginx.
