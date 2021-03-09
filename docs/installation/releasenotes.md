@@ -86,8 +86,9 @@ The *kheops-authorization-metricbeat* and *kheops-filebeat-sidecar* containers a
 - Add a volume and mount it at /kheops/reverseproxy/logs in  *kheops-filebeat-sidecar* and /var/log/nginx in *kheops-reverse-proxy*.
 - Add a volume and mount it at /kheops/pep/logs in  *kheops-filebeat-sidecar* and /usr/local/tomcat/logs in *pacs-authorization-proxy*.
 
-- Add a logging driver to each container 
-```
+- Add a logging driver to all containers to limit the size of generated logs.
+
+```yaml
 logging:
   driver: json-file
   options:
