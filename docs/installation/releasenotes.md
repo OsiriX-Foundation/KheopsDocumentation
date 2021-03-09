@@ -75,13 +75,16 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
 - Environment variable `KHEOPS_PEP_ELASTIC_INSTANCE` is no longer used.
 - Environment variable `KHEOPS_PEP_LOGSTASH_URL` is no longer used.
 
-- New *mandatory* environment variable `KHEOPS_INSTANCES` for *kheops-authorization-metricbeat* container and *kheops-filebeat-sidecar*
-- New *mandatory* environment variable `KHEOPS_LOGSTASH_URL` for *kheops-authorization-metricbeat* container and *kheops-filebeat-sidecar*
+The *kheops-authorization-metricbeat* and *kheops-filebeat-sidecar* containers are optional. If they are present the following environment variables apply.
 
-- The *kheops-authorization-metricbeat* container must be connected to the *kheops-authorization* container.
-- Add a volume beetwen *kheops-filebeat-sidecar* and *kheops-authorization* /kheops/authorization/logs /usr/local/tomcat/logs.
-- Add a volume beetwen *kheops-filebeat-sidecar* and *kheops-reverse-proxy* /kheops/reverseproxy/logs /var/log/nginx.
-- Add a volume beetwen *kheops-filebeat-sidecar* and *pacs-authorization-proxy* /kheops/pep/logs /var/log/nginx.
+- New *mandatory* environment variable `KHEOPS_INSTANCES` for the *kheops-authorization-metricbeat* and *kheops-filebeat-sidecar* containers.
+- New *mandatory* environment variable `KHEOPS_LOGSTASH_URL` for the *kheops-authorization-metricbeat* and *kheops-filebeat-sidecar* containers.
+
+- The *kheops-authorization-metricbeat* container must be able to connect to the over the network *kheops-authorization* container.
+
+- Add a volume and mount it at /kheops/authorization/logs in  *kheops-filebeat-sidecar* and /usr/local/tomcat/logs in *kheops-authorization*.
+- Add a volume and mount it at /kheops/reverseproxy/logs in  *kheops-filebeat-sidecar* and /var/log/nginx in *kheops-reverse-proxy*.
+- Add a volume and mount it at /kheops/pep/logs in  *kheops-filebeat-sidecar* and /usr/local/tomcat/logs in *pacs-authorization-proxy*.
 
 - Add a logging driver to each container 
 ```
