@@ -128,7 +128,7 @@ It is possible to use a custom TLS certificate. To use it, replace the `-insecur
 
 ---
 
-### Removing Kibana and logs management
+### Running without Kibana and logs management
 
 **In the *docker-compose.yml* file :**
 - Remove services : *kibana, elasticsearch, logstash, kheops-authorization-metricbeat and kheops-filebeat-sidecar*
@@ -138,7 +138,7 @@ It is possible to use a custom TLS certificate. To use it, replace the `-insecur
 **In the *docker-compose.env* file :** 
 - Remove *KHEOPS_INSTANCES* and *KHEOPS_LOGSTASH_URL*
 
-### Sending logs to an ELK in production
+### Sending logs to an existing ELK Stack 
 
 **In the *docker-compose.yml* file :**
 - Remove services : *kibana, elasticsearch and logstash*
@@ -146,9 +146,9 @@ It is possible to use a custom TLS certificate. To use it, replace the `-insecur
 - Remove volume : *elastic_data* in all the *docker-compose.yml*
 
 **In the *docker-compose.env* file : **
-- Edit *KHEOPS_LOGSTASH_URL* with your own logstash url
+- Edit *KHEOPS_LOGSTASH_URL* with the logstash url
 
-**In your ELK**
+**In the existing ELK Stack**
 
 - Import logstash config [here](https://github.com/OsiriX-Foundation/logstash/blob/main/logstash.conf)
 - Import index pattern, visualisation and dashboard in your Kibana from [here](https://github.com/OsiriX-Foundation/kibana-initialize/blob/main/export.ndjson)
