@@ -20,23 +20,13 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
 
 - Fixed issue for metrics.
 
-### Upgrade
-
-- No additional upgrade steps are necessary
-
----
-
-## v0.9.6
-
-### Changes
-
 - Autocomplete for user email address (send, add to an album).
 
-- Fix silent login.
+- Fixed silent login.
 
-- Remove filebeat and metricbeat from containers (*kheops-authorization*, *kheops-reverse-proxy* and *pacs-authorization-proxy*). Now one *filebeat* and one *metricbeat* are used as sidecar containers (*kheops-authorization-metricbeat* and *kheops-filebeat-sidecar*).
+- Removed filebeat and metricbeat from containers (*kheops-authorization*, *kheops-reverse-proxy* and *pacs-authorization-proxy*). Now one *filebeat* and one *metricbeat* are used as sidecar containers (*kheops-authorization-metricbeat* and *kheops-filebeat-sidecar*).
 
-- (API) Mutation : 
+- (API) Mutation: 
   - Can be filtered by user, seriesUID, studyUID, capabilityTokenID, date, type, ... [(documentation)](https://github.com/OsiriX-Foundation/KheopsAuthorization/wiki/Get-a-list-of-events-(comments-and-mutations))
   - Field `origin` renamed to `source`.
   - Field `capability` renamed to `capability_token`.
@@ -47,19 +37,19 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
   - Field `series` is now an array with only one series when the mutation type is `ADD_SERIES` and `REMOVE_SERIES`.
   - Add boolean field `is_prensent_in_album` for each series. It indicate if the series is present in the album.
 
-- (API) Comments :
+- (API) Comments:
   - Field `origin` renamed to `source`.
 
-- (API) Webhook : 
-  - Update when a webhook is triggered (for new series). Now a webhook is sent at the end of the upload, not for each instance. The webhook is triggered  We cache a list of the new series and if after a while we don't receive any instances we send the webhook.
+- (API) Webhook:
+  - Change when a webhook is triggered (for new series). Webhooks are now sent once a timeout is reached follwing the reception of the last instance of a series.
   - New webhooks for *remove_series* and *delete_album*. [(documentation)](https://github.com/OsiriX-Foundation/KheopsAuthorization/wiki#webhooks).
   - If new instances are uploaded to Kheops, a webhook is triggered for each album containing the series.
 
-- Database : 
+- Database: 
   - New table `event_series`
   - Remove column `series_fk` in table `events`
 
-- Log :
+- Log:
   - kheops-authorizion : the file /usr/local/tomcat/conf/logging.properties rotate after 5 days (90 previously).
   - kheops-reverse-proxy : use logrotate inside the container.
 
@@ -75,7 +65,7 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
 - Environment variable `KHEOPS_PEP_ELASTIC_INSTANCE` is no longer used.
 - Environment variable `KHEOPS_PEP_LOGSTASH_URL` is no longer used.
 
-The *kheops-authorization-metricbeat* and *kheops-filebeat-sidecar* containers are optional. If they are present the following environment variables apply.
+Additional *kheops-authorization-metricbeat* and *kheops-filebeat-sidecar* containers can be optional added to provide auditing and logging capabilities. If they are present the following environment variables apply.
 
 - New *mandatory* environment variable `KHEOPS_INSTANCES` for the *kheops-authorization-metricbeat* and *kheops-filebeat-sidecar* containers.
 - New *mandatory* environment variable `KHEOPS_LOGSTASH_URL` for the *kheops-authorization-metricbeat* and *kheops-filebeat-sidecar* containers.
