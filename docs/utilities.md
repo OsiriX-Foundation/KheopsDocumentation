@@ -17,6 +17,10 @@ We would be delighted to add any other utilities you might have developed to thi
 
 ## kheops-client
 
+MIT License  
+By [Norman Juchler](https://github.com/normanius) at the Sven Hirsh Lab at [ZHAW](zhaw.ch)  
 [https://github.com/hirsch-lab/kheops-client](https://github.com/hirsch-lab/kheops-client)
+
+
 
 Utility for querying data from a Kheops DICOM database via the DICOMWeb API. Examples of uses include querying for studies in an album or downloading an entire studies.
