@@ -65,6 +65,16 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
 - Environment variable `KHEOPS_PEP_ELASTIC_INSTANCE` is no longer used.
 - Environment variable `KHEOPS_PEP_LOGSTASH_URL` is no longer used.
 
+- Add a logging driver to all containers to limit the size of generated logs.
+
+```yaml
+logging:
+  driver: json-file
+  options:
+    max-file: "10"
+    max-size: "10m"
+```
+
 Additional *kheops-authorization-metricbeat* and *kheops-filebeat-sidecar* containers can be optional added to provide auditing and logging capabilities. If they are present the following environment variables apply.
 
 - New *mandatory* environment variable `KHEOPS_INSTANCES` for the *kheops-authorization-metricbeat* and *kheops-filebeat-sidecar* containers.
@@ -75,16 +85,6 @@ Additional *kheops-authorization-metricbeat* and *kheops-filebeat-sidecar* conta
 - Add a volume and mount it at /kheops/authorization/logs in  *kheops-filebeat-sidecar* and /usr/local/tomcat/logs in *kheops-authorization*.
 - Add a volume and mount it at /kheops/reverseproxy/logs in  *kheops-filebeat-sidecar* and /var/log/nginx in *kheops-reverse-proxy*.
 - Add a volume and mount it at /kheops/pep/logs in  *kheops-filebeat-sidecar* and /var/log/nginx in *pacs-authorization-proxy*.
-
-- Add a logging driver to all containers to limit the size of generated logs.
-
-```yaml
-logging:
-  driver: json-file
-  options:
-    max-file: "10"
-    max-size: "10m"
-```
 
 ---
 
