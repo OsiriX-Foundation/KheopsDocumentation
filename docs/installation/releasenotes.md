@@ -79,9 +79,7 @@ Additional *kheops-authorization-metricbeat* and *kheops-filebeat-sidecar* conta
 
 - New *mandatory* environment variable `KHEOPS_INSTANCES` for the *kheops-authorization-metricbeat* and *kheops-filebeat-sidecar* containers.
 - New *mandatory* environment variable `KHEOPS_LOGSTASH_URL` for the *kheops-authorization-metricbeat* and *kheops-filebeat-sidecar* containers.
-
 - The *kheops-authorization-metricbeat* container must be able to connect to the over the network *kheops-authorization* container.
-
 - Add a volume and mount it at /kheops/authorization/logs in  *kheops-filebeat-sidecar* and /usr/local/tomcat/logs in *kheops-authorization*.
 - Add a volume and mount it at /kheops/reverseproxy/logs in  *kheops-filebeat-sidecar* and /var/log/nginx in *kheops-reverse-proxy*.
 - Add a volume and mount it at /kheops/pep/logs in  *kheops-filebeat-sidecar* and /var/log/nginx in *pacs-authorization-proxy*.
