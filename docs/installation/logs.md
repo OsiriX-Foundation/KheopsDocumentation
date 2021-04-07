@@ -28,7 +28,7 @@ This directory contain all logs files.
 
 
 | key                         | value | optional | condition / remarques |
-|:----------------------------|:------|:---|:----------------------|
+|:----------------------------|:------|:---------|:----------------------|
 | action                      | LIST_ALBUMS, LIST_USERS, NEW_ALBUM, EDIT_ALBUM, ADD_USER, REMOVE_USER, ADD_ADMIN, REMOVE_ADMIN, ALBUM_ADD_FAVORITE, ALBUM_REMOVE_FAVORITE, DELETE_ALBUM, GET_ALBUM, SHARE_STUDY_WITH_USER, SHARE_SERIES_WITH_USER, SHARE_STUDY_WITH_ALBUM, SHARE_SERIES_WITH_ALBUM, REMOVE_SERIES, REMOVE_STUDY, APPROPRIATE_STUDY, APPROPRIATE_SERIES, NEW_CAPABILITY, REVOKE_CAPABILITY, GET_CAPABILITY, GET_CAPABILITIES, INTROSPECT_CAPABILITY, ADD_FAVORITE_SERIES, ADD_FAVORITE_STUDY, REMOVE_FAVORITE_SERIES, REMOVE_FAVORITE_STUDY, QIDO_STUDIES, QIDO_SERIES, QIDO_STUDY_METADATA, POST_COMMENT, LIST_EVENTS, FETCH, TEST_USER, USER_INFO, USERS_LIST, NEW_REPORT_PROVIDER, NEW_REPORT, REPORT_PROVIDER_CONFIGURATION, LIST_REPORT_PROVIDERS, GET_REPORT_PROVIDER, DELETE_REPORT_PROVIDER, EDIT_REPORT_PROVIDER, REPORT_PROVIDER_METADATA, NEW_TOKEN, INTROSPECT_TOKEN, REFRESH_TOKEN_GRANT, AUTHORIZATION_CODE_GRANT, PASSWORD_GRANT, CLIENT_CREDENTIALS_GRANT, JWT_ASSERTION_GRANT, SAML_ASSERTION_GRANT, TOKEN_EXCHANGE_GRANT, NEW_USER, UPDATE_USER, INBOX_INFO, NEW_WEBHOOK, REMOVE_WEBHOOK, GET_WEBHOOK, EDIT_WEBHOOK, LIST_WEBHOOK, TRIGGER_WEBHOOK | false   | - |
 | user                        | {user_id} | false   | - |
 | tokenType                   | KEYCLOAK_TOKEN, ALBUM_CAPABILITY_TOKEN, USER_CAPABILITY_TOKEN, PEP_TOKEN, VIEWER_TOKEN, REPORT_PROVIDER_TOKEN | false   | - |
@@ -56,19 +56,19 @@ This directory contain all logs files.
 | writeComments               | boolean | true    | if 'action' is : NEW_ALBUM or EDIT_ALBUM |
 
 
-
-
-
-
-
-
-  TODO lister chaque key et les valeurs (type explication, lien etc) 
-
-
 - kheopsreverseproxy
 
+These containers log at the following path : /var/log/nginx/access.log and /var/log/nginx/error.log
 
+Acesss logs :
 
+$remote_addr - $remote_user [$time_local] "$request" $status $body_bytes_sent $upstream_connect_time $upstream_header_time $upstream_response_time $upstream_response_time "$http_referer" "$http_user_agent" "$http_x_forwarded_for"
+
+Example : 192.168.144.1 - - [07/Apr/2021:12:55:38 +0000] "GET /api/albums?canAddSeries=true&sort=-last_event_time HTTP/1.1" 200 2 0.000 0.740 0.740 0.740 "http://127.0.0.1/inbox" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36" "-"
+
+Error logs :
+Use the leve warning and the standard format.
+ 
 - kheopspacsreverseproxy (pep)
 
 
