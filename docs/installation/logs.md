@@ -75,7 +75,7 @@ Example :
 
 - Error logs
 
-Use the level warning and the standard format.
+Use the level `warning` and the standard format.
 
 ### kheopspacsreverseproxy (pep)
 
@@ -90,10 +90,10 @@ $remote_addr - $lua_remote_user [$time_local] "$request" $status $body_bytes_sen
 ```
 with :
 
-`lua_remote_user` for the user id or `Fetcher` if the request come from authorization server <br>
-`azp` for `Authorized party` <br>
-`cap_token` for the capability token id if the request was made with a capability token (user or album) <br>
-`act` for `acting party` this field contain the user id who impersonnate the user. <br>
+> `lua_remote_user` for the user id or `Fetcher` if the request come from authorization server <br>
+> `azp` for `Authorized party` <br>
+> `cap_token` for the capability token id if the request was made with a capability token (user or album) <br>
+> `act` for `acting party` this field contain the user id who impersonnate the user. <br>
 
 Example : 
 ```
@@ -102,7 +102,7 @@ Example :
 
 - Error logs
 
-Use the level warning and the standard format.
+Use the level `warning` and the standard format.
 
 ## Elastic Stack (ELK)
 
