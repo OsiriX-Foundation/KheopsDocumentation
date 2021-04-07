@@ -14,7 +14,7 @@ This page explains how to KHEOPS manages logs.
 
 Each container write its logs in different paths.
 
-- kheopszipper, kheopsauthorization and kheopsdicomwebproxy
+### kheopszipper, kheopsauthorization and kheopsdicomwebproxy
 
 These containers log at the following path : /usr/local/tomcat/logs
 This directory contain all logs files. 
@@ -23,7 +23,7 @@ This directory contain all logs files.
   - localhost_access_log.{YYYY-MM-DD}.txt
     This file contains all the HTTP access. The log format used is the common log format defined by '%h %l %u %t "%r" %s %b'. [DOC here](http://tomcat.apache.org/tomcat-8.0-doc/config/valve.html#Access_Log_Valve)
 
-- kheopsauthorization
+### kheopsauthorization
   In addition to common logs, this container logs all actions made by users. These logs are in the cataline.<YYYY-MM-DD>.log file and can be find under the level ´KHEOPS´. The log contain a set of keys/values that define who do what. The format is the next : <key>=<value> multiple pair are separated by space.
 
 
@@ -56,20 +56,27 @@ This directory contain all logs files.
 | writeComments               | boolean | true    | if 'action' is : NEW_ALBUM or EDIT_ALBUM |
 
 
-- kheopsreverseproxy
+### kheopsreverseproxy
 
 These containers log at the following path : /var/log/nginx/access.log and /var/log/nginx/error.log
 
-Acesss logs :
+- Accesss logs
 
+The access logs follow the next pattern : 
+
+```
 $remote_addr - $remote_user [$time_local] "$request" $status $body_bytes_sent $upstream_connect_time $upstream_header_time $upstream_response_time $upstream_response_time "$http_referer" "$http_user_agent" "$http_x_forwarded_for"
+```
 
-Example : 192.168.144.1 - - [07/Apr/2021:12:55:38 +0000] "GET /api/albums?canAddSeries=true&sort=-last_event_time HTTP/1.1" 200 2 0.000 0.740 0.740 0.740 "http://127.0.0.1/inbox" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36" "-"
+Example : 
+```
+192.168.144.1 - - [07/Apr/2021:12:55:38 +0000] "GET /api/albums?canAddSeries=true&sort=-last_event_time HTTP/1.1" 200 2 0.000 0.740 0.740 0.740 "http://127.0.0.1/inbox" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36" "-"
+```
 
-Error logs :
+- Error logs
 Use the leve warning and the standard format.
- 
-- kheopspacsreverseproxy (pep)
+
+### kheopspacsreverseproxy (pep)
 
 
 
