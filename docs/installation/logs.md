@@ -18,9 +18,9 @@ Each container write its logs in different paths.
 
 These containers log at the following path : /usr/local/tomcat/logs
 This directory contain all logs files. 
-  - cataline.<YYYY-MM-DD>.log
+  - cataline.\<YYYY-MM-DD\>.log
     This file contains the Java logs and stack traces. The log format used is the standard *****TODO: add link or more****
-  - localhost_access_log.<YYYY-MM-DD>.txt
+  - localhost_access_log.\<YYYY-MM-DD\>.txt
     This file contains all the HTTP access. The log format used is the common log format defined by '%h %l %u %t "%r" %s %b'. [DOC here](http://tomcat.apache.org/tomcat-8.0-doc/config/valve.html#Access_Log_Valve)
 
 - kheopsauthorization
