@@ -90,10 +90,10 @@ $remote_addr - $lua_remote_user [$time_local] "$request" $status $body_bytes_sen
 ```
 with :
 
-`lua_remote_user` for the user id or `Fetcher` if the request come from authorization server
-`azp` for `Authorized party` 
-`cap_token` for the capability token id if the request was made with a capability token (user or album)
-`act` for `acting party` this field contain the user id who impersonnate the user,
+  - `lua_remote_user` for the user id or `Fetcher` if the request come from authorization server
+  - `azp` for `Authorized party` 
+  - `cap_token` for the capability token id if the request was made with a capability token (user or album)
+  - `act` for `acting party` this field contain the user id who impersonnate the user,
 
 Example : 
 ```
