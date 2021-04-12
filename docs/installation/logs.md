@@ -106,4 +106,5 @@ Use the level `warning` and the standard format.
 
 ## Elastic Stack (ELK)
 
-
+Our Dashboard, Visualisation and Index can be download for adding in your own Kibana [here](https://github.com/OsiriX-Foundation/kibana-initialize/blob/main/export.ndjson). <br>
+The Rollup job for the metrics is available [here](https://github.com/OsiriX-Foundation/kibana-initialize/blob/main/rollup_job_kheops_metrics.json)
