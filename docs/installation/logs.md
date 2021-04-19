@@ -60,7 +60,7 @@ This directory contain all logs files.
 
 These containers log at the following path : `/var/log/nginx/access.log` and `/var/log/nginx/error.log`
 
-- Accesss logs
+#### Accesss logs
 
 The access logs follow the next pattern : 
 
@@ -73,7 +73,7 @@ Example :
 192.168.144.1 - - [07/Apr/2021:12:55:38 +0000] "GET /api/albums?canAddSeries=true&sort=-last_event_time HTTP/1.1" 200 2 0.000 0.740 0.740 0.740 "http://127.0.0.1/inbox" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36" "-"
 ```
 
-- Error logs
+#### Error logs
 
 Use the level `warning` and the standard format.
 
