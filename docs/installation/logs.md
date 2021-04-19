@@ -83,26 +83,26 @@ These containers log at the following path : `/var/log/nginx/access.log` and `/v
 
 - Accesss logs
 
-The access logs follow the next pattern : 
+> The access logs follow the next pattern : 
 
-```
+> ```
 $remote_addr - $lua_remote_user [$time_local] "$request" $status $body_bytes_sent $upstream_connect_time $upstream_header_time $upstream_response_time $upstream_response_time "$http_referer" "$http_user_agent" "$http_x_forwarded_for" $azp $cap_token $act
 ```
-with :
+> with :
 
-`lua_remote_user` for the user id or `Fetcher` if the request come from authorization server <br>
-`azp` for `Authorized party` <br>
-`cap_token` for the capability token id if the request was made with a capability token (user or album) <br>
-`act` for `acting party` this field contain the user id who impersonnate the user. <br>
+> - `lua_remote_user` for the user id or `Fetcher` if the request come from authorization server <br>
+> - `azp` for `Authorized party` <br>
+> - `cap_token` for the capability token id if the request was made with a capability token (user or album) <br>
+> - `act` for `acting party` this field contain the user id who impersonnate the user. <br>
 
-Example : 
-```
+> Example : 
+> ```
 192.168.96.5 - bh77f5ds-i9n6-vg5d-cfg7-dab2942a561f [07/Apr/2021:14:00:02 +0000] "GET /studies?StudyInstanceUID=1.3.6.1.4.1.5962.1.2.0.1175775772.5732.0&includefield=00081030 HTTP/1.1" 500 183 - - - - "-" "Jersey/2.33 (HttpUrlConnection 11.0.10)" "-" - - -
 ```
 
 - Error logs
 
-Use the level `warning` and the standard format.
+> Use the level `warning` and the standard format.
 
 ## Elastic Stack (ELK)
 
