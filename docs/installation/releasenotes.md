@@ -83,7 +83,7 @@ Additional *kheops-authorization-metricbeat* and *kheops-filebeat-sidecar* conta
 - Add a volume and mount it at /kheops/authorization/logs in  *kheops-filebeat-sidecar* and /usr/local/tomcat/logs in *kheops-authorization*.
 - Add a volume and mount it at /kheops/reverseproxy/logs in  *kheops-filebeat-sidecar* and /var/log/nginx in *kheops-reverse-proxy*.
 - Add a volume and mount it at /kheops/pep/logs in  *kheops-filebeat-sidecar* and /var/log/nginx in *pacs-authorization-proxy*.
-- Add a volume and mount it at /registry in  *kheops-filebeat-sidecar*
+- Add a volume and mount it at /registry in  *kheops-filebeat-sidecar*.
 
 ---
 
