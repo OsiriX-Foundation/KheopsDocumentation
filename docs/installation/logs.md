@@ -24,7 +24,7 @@ This directory contain all logs files.
     This file contains all the HTTP access. The log format used is the common log format defined by '%h %l %u %t "%r" %s %b'. [DOC here](http://tomcat.apache.org/tomcat-8.0-doc/config/valve.html#Access_Log_Valve)
 
 ### kheopsauthorization
-  In addition to common logs, this container logs all actions made by users. These logs are in the `catalina.<YYYY-MM-DD>.log` file and can be find under the level ´KHEOPS´. The log contain a set of keys/values that define who do what. The format is the next : \<key\>=\<value\> multiple pair are separated by space.
+  In addition to common logs, this container logs all actions made by users. These logs are in the `catalina.<YYYY-MM-DD>.log` file and can be find under the level **KHEOPS**. The log contain a set of keys/values that define who do what. The format is the next : \<key\>=\<value\> multiple pair are separated by space.
 
 
 | key                         | value | optional | condition / remarques |
