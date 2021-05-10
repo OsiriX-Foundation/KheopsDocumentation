@@ -8,7 +8,7 @@ permalink: /docs/installation/logs
 
 # Logs
 
-This page explains how to KHEOPS manages logs.
+This page explains how to manage KHEOPS logs.
 
 ## Location and format
 
@@ -19,12 +19,12 @@ Each container write its logs in different paths.
 These containers log at the following path : `/usr/local/tomcat/logs` <br>
 This directory contain all logs files. 
   - `catalina.{YYYY-MM-DD}.log`
-    This file contains the Java logs and stack traces. The log format used is the standard.
+    This file contains Java logs and stack traces. The log format used is the standard.
   - `localhost_access_log.{YYYY-MM-DD}.txt`
     This file contains all the HTTP access. The log format used is the common log format defined by '%h %l %u %t "%r" %s %b'. [DOC here](http://tomcat.apache.org/tomcat-8.0-doc/config/valve.html#Access_Log_Valve)
 
 ### kheopsauthorization
-  In addition to common logs, this container logs all actions made by users. These logs are in the `catalina.<YYYY-MM-DD>.log` file and can be find under the level **KHEOPS**. The log contain a set of keys/values that define who do what. The format is the next : \<key\>=\<value\> multiple pair are separated by space.
+  In addition to common logs, this container logs all actions made by users. These logs are in the `catalina.<YYYY-MM-DD>.log` file and can be find under the level **KHEOPS**. The log contain a set of keys/values that define who do what. The format is the next : `\<key\>=\<value\>` and multiple pair are separated by space.
 
 
 | key                         | value         | optional | condition / remarques |
@@ -60,7 +60,7 @@ This directory contain all logs files.
 
 This container log at the following path : `/var/log/nginx/access.log` and `/var/log/nginx/error.log`
 
-- Accesss logs
+- Access logs
 
 > The access logs follow the next pattern : 
 
@@ -75,7 +75,7 @@ This container log at the following path : `/var/log/nginx/access.log` and `/var
 
 - Error logs
 
-> Use the level `warning` and the standard format.
+> Use the level `warning` and the `nginx` standard format.
 
 ### kheopspacsreverseproxy (pep)
 
@@ -102,7 +102,7 @@ $remote_addr - $lua_remote_user [$time_local] "$request" $status $body_bytes_sen
 
 - Error logs
 
-> Use the level `warning` and the standard format.
+> Use the level `warning` and the `nginx` standard format.
 
 ## Elastic Stack (ELK)
 
