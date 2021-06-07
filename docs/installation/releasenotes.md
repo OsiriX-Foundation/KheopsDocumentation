@@ -18,6 +18,8 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
 
 ### Changes
 
+- Validation instance metadata before uploading.
+
 - Fixed issue for metrics.
 
 - Autocomplete for user email address (send, add to an album).
