@@ -26,6 +26,11 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
 
 - Fixed silent login.
 
+- UI:
+  - Many fixes.
+  - Before removing or downgrading an admin from an album, the user will be informed that if he do this action some capabilities token will be revoked at the same time. Because they were created by the user.
+  - Before exiting an album, the user will be informed that if he do this action some capabilities token will be revoked at the same time. Because they were created by himself.
+
 - Removed filebeat and metricbeat from containers (*kheops-authorization*, *kheops-reverse-proxy* and *pacs-authorization-proxy*). Now one *filebeat* and one *metricbeat* are used as sidecar containers (*kheops-authorization-metricbeat* and *kheops-filebeat-sidecar*).
 
 - (API) Mutation: 
@@ -47,8 +52,12 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
   - New webhooks for *remove_series* and *delete_album*. [(documentation)](https://github.com/OsiriX-Foundation/KheopsAuthorization/wiki#webhooks).
   - If new instances are uploaded to Kheops, a webhook is triggered for each album containing the series.
 
+- (API) Capabilities:
+  - Add a field `revoked_by` with the user who revoked the album capability token. [(documentation)](https://github.com/OsiriX-Foundation/kheops/wiki/Capabilities-Tokens-List)
+
 - Database: 
   - New table `event_series`
+  - New column `revoked_by` in table `capabilities` set with a user pk when the album capabilitie token is revoked otherwise the field is `Null`.
   - Remove column `series_fk` in table `events`
 
 - Log:
