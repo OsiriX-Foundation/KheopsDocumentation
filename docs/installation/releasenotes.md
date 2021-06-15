@@ -28,8 +28,8 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
 
 - UI:
   - Many fixes.
-  - Before removing or downgrading an admin from an album, the user will be informed that if he do this action some capabilities token will be revoked at the same time. Because they were created by the user.
-  - Before exiting an album, the user will be informed that if he do this action some capabilities token will be revoked at the same time. Because they were created by himself.
+  - Before removing or downgrading an admin from an album, the user will be informed that if he performs this action some capabilities token will be revoked at the same time. Because they were created by the user.
+  - Before exiting an album, the user will be informed that if he performs this action some capabilities token will be revoked at the same time. Because they were created by himself.
 
 - Removed filebeat and metricbeat from containers (*kheops-authorization*, *kheops-reverse-proxy* and *pacs-authorization-proxy*). Now one *filebeat* and one *metricbeat* are used as sidecar containers (*kheops-authorization-metricbeat* and *kheops-filebeat-sidecar*).
 
@@ -85,7 +85,7 @@ logging:
     max-size: "10m"
 ```
 
-Additional *kheops-authorization-metricbeat* and *kheops-filebeat-sidecar* containers can be optional added to provide auditing and logging capabilities. If they are present the following environment variables apply.
+Optionally, additional *kheops-authorization-metricbeat* and *kheops-filebeat-sidecar* containers can be added to provide auditing and logging capabilities. If they are present the following environment variables apply.
 
 - New *mandatory* environment variable `KHEOPS_INSTANCES` for the *kheops-authorization-metricbeat* and *kheops-filebeat-sidecar* containers.
 - New *mandatory* environment variable `KHEOPS_LOGSTASH_URL` for the *kheops-authorization-metricbeat* and *kheops-filebeat-sidecar* containers.
