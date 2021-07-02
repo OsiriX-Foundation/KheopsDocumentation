@@ -65,7 +65,7 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
   - kheops-reverse-proxy : use logrotate inside the container.
 
 ### Upgrade
-
+- New **mandatory** envrionment variable `KHEOPS_ROOT_OIDC`, must be set to the root URL of the OIDC/OAuth2 provider. Use for the *kheops-ui*.
 - Environment variable `KHEOPS_AUTHORIZATION_ENABLE_ELASTIC` is no longer used.
 - Environment variable `KHEOPS_AUTHORIZATION_ELASTIC_INSTANCE` is no longer used.
 - Environment variable `KHEOPS_AUTHORIZATION_LOGSTASH_URL ` is no longer used.
