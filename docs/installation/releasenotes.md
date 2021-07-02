@@ -14,6 +14,90 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
 
 ---
 
+## v1.0.0
+
+### Changes
+
+- Validation instance metadata before uploading.
+
+- Fixed issue for metrics.
+
+- Autocomplete for user email address (send, add to an album).
+
+- Fixed silent login.
+
+- UI:
+  - Many fixes.
+  - Before removing or downgrading an admin from an album, the user will be informed that if he performs this action some capabilities token will be revoked at the same time. Because they were created by the user.
+  - Before exiting an album, the user will be informed that if he performs this action some capabilities token will be revoked at the same time. Because they were created by himself.
+
+- Removed filebeat and metricbeat from containers (*kheops-authorization*, *kheops-reverse-proxy* and *pacs-authorization-proxy*). Now one *filebeat* and one *metricbeat* are used as sidecar containers (*kheops-authorization-metricbeat* and *kheops-filebeat-sidecar*).
+
+- (API) Mutation: 
+  - Can be filtered by user, seriesUID, studyUID, capabilityTokenID, date, type, ... [(documentation)](https://github.com/OsiriX-Foundation/KheopsAuthorization/wiki/Get-a-list-of-events-(comments-and-mutations))
+  - Field `origin` renamed to `source`.
+  - Field `capability` renamed to `capability_token`.
+  - Add boolean field `is_admin` in `source` if the user is always a member of the album.
+  - If the mutaion was made by a report provider or a capability token : the related informations are moved to `source`.
+  - `mutation_type=NEW_REPORT` is now `mutation_type=NEW_SERIES` with the `report_provider` in `source`
+  - Add field `series` when the mutation type is `ADD_STUDY` and `REMOVE_STUDY`. This new field is an array of series. 
+  - Field `series` is now an array with only one series when the mutation type is `ADD_SERIES` and `REMOVE_SERIES`.
+  - Add boolean field `is_prensent_in_album` for each series. It indicate if the series is present in the album.
+
+- (API) Comments:
+  - Field `origin` renamed to `source`.
+
+- (API) Webhook:
+  - Change when a webhook is triggered (for new series). Webhooks are now sent once a timeout is reached follwing the reception of the last instance of a series.
+  - New webhooks for *remove_series* and *delete_album*. [(documentation)](https://github.com/OsiriX-Foundation/KheopsAuthorization/wiki#webhooks).
+  - If new instances are uploaded to Kheops, a webhook is triggered for each album containing the series.
+
+- (API) Capabilities:
+  - Add a field `revoked_by` with the user who revoked the album capability token. [(documentation)](https://github.com/OsiriX-Foundation/kheops/wiki/Capabilities-Tokens-List)
+
+- Database: 
+  - New table `event_series`
+  - New column `revoked_by` in table `capabilities` set with a user pk when the album capabilitie token is revoked otherwise the field is `Null`.
+  - Remove column `series_fk` in table `events`
+
+- Log:
+  - kheops-authorizion : the file /usr/local/tomcat/conf/logging.properties rotate after 5 days (90 previously).
+  - kheops-reverse-proxy : use logrotate inside the container.
+
+### Upgrade
+- New **mandatory** envrionment variable `KHEOPS_ROOT_OIDC`, must be set to the root URL of the OIDC/OAuth2 provider. Use for the *kheops-ui*.
+- Add a volume and mount it at /var/log/nginx in  *pacs-authorization-proxy*
+- Environment variable `KHEOPS_AUTHORIZATION_ENABLE_ELASTIC` is no longer used.
+- Environment variable `KHEOPS_AUTHORIZATION_ELASTIC_INSTANCE` is no longer used.
+- Environment variable `KHEOPS_AUTHORIZATION_LOGSTASH_URL ` is no longer used.
+- Environment variable `KHEOPS_REVERSE_PROXY_ENABLE_ELASTIC` is no longer used.
+- Environment variable `KHEOPS_REVERSE_PROXY_ELASTIC_INSTANCE` is no longer used.
+- Environment variable `KHEOPS_REVERSE_PROXY_LOGSTASH_URL` is no longer used.
+- Environment variable `KHEOPS_PEP_ENABLE_ELASTIC` is no longer used.
+- Environment variable `KHEOPS_PEP_ELASTIC_INSTANCE` is no longer used.
+- Environment variable `KHEOPS_PEP_LOGSTASH_URL` is no longer used. <br> <br>
+- (Recommended) Add a logging driver to all containers to limit the size of generated logs.
+
+> ```yaml
+logging:
+  driver: json-file
+  options:
+    max-file: "10"
+    max-size: "10m"
+```
+
+Optionally, additional *kheops-authorization-metricbeat* and *kheops-filebeat-sidecar* containers can be added to provide auditing and logging capabilities. If they are present the following environment variables apply.
+
+- New *mandatory* environment variable `KHEOPS_INSTANCES` for the *kheops-authorization-metricbeat* and *kheops-filebeat-sidecar* containers.
+- New *mandatory* environment variable `KHEOPS_LOGSTASH_URL` for the *kheops-authorization-metricbeat* and *kheops-filebeat-sidecar* containers.
+- The *kheops-authorization-metricbeat* container must be able to connect to the over the network *kheops-authorization* container.
+- Add a volume and mount it at /kheops/authorization/logs in  *kheops-filebeat-sidecar* and /usr/local/tomcat/logs in *kheops-authorization*.
+- Add a volume and mount it at /kheops/reverseproxy/logs in  *kheops-filebeat-sidecar* and /var/log/nginx in *kheops-reverse-proxy*.
+- Add a volume and mount it at /kheops/pep/logs in  *kheops-filebeat-sidecar* and /var/log/nginx in *pacs-authorization-proxy*.
+- Add a volume and mount it at /registry in  *kheops-filebeat-sidecar* is recommended for the filebeat rsgistry.
+
+---
+
 ## v0.9.5
 
 ### Changes
@@ -24,7 +108,7 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
 
 ### Upgrade
 
-- No additional upgrade steps are necessary
+- No additional upgrade steps are necessary.
 
 ---
 
@@ -59,7 +143,7 @@ Versions of KHEOPS up to v0.9.2 had a strong dependency on Keycloak. Only the us
  While we still expect Keycloak to be used in the majority of cases. It will now be possible to use other OIDC providers directly, without installing Keycloak.
 
 ### Changes
-- Loads user profile information from Keycloak at startup
+- Loads user profile information from Keycloak at startup.
 - Updates user profile information at each login.
 - UI Improvements.
 
