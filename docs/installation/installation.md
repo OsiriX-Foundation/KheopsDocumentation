@@ -22,13 +22,12 @@ Below are instruction for getting a basic instance of KHEOPS up and running. Thi
 4. Run the following command:
 
 ```shell
-bash <(curl -sL https://raw.githubusercontent.com/OsiriX-Foundation/KheopsOrchestration/insecure-install-v1.0.0/kheopsinstall.sh)
+bash <(curl -sL https://raw.githubusercontent.com/OsiriX-Foundation/KheopsOrchestration/insecure-install/kheopsinstall.sh)
 ```
 
 This script will create a new directory named `kheops` in which it will download docker-compose configuration files, a keycloak realm configuration, and generate the necessary secrets.
 
-Once installed, Keycloak will be available at [http://127.0.0.1:8080](http://127.0.0.1:8080), 
-Kibana will be available at [http://127.0.0.1:8081](http://127.0.0.1:8081) and
+Once installed, Keycloak will be available at [http://127.0.0.1:8080](http://127.0.0.1:8080), and
 KHEOPS will be available at [http://127.0.0.1](http://127.0.0.1). When you first connect to KHEOPS
 you will be redirected to the Keycloak login screen. The `Register` link will be available to
 create a new KHEOPS account. 
@@ -127,33 +126,6 @@ It is possible to use a custom TLS certificate. To use it, replace the `-insecur
     ```
 
 ---
-
-### Running without Kibana and logs management
-
-**In the *docker-compose.yml* file :**
-- Remove services : *kibana, elasticsearch, logstash, kheops-authorization-metricbeat and kheops-filebeat-sidecar*
-- Remove networks : *beats_network, elk_network* in all the *docker-compose.yml*
-- Remove volumes : *elastic_data, logs_pep, logs_reverse_proxy, logs_auth* in all the *docker-compose.yml*
-
-**In the *docker-compose.env* file :** 
-- Remove *KHEOPS_INSTANCES* and *KHEOPS_LOGSTASH_URL*
-
-### Sending logs to an existing ELK Stack 
-
-**In the *docker-compose.yml* file :**
-- Remove services : *kibana, elasticsearch and logstash*
-- Remove network : *elk_network* in all the *docker-compose.yml*
-- Remove volume : *elastic_data* in all the *docker-compose.yml*
-
-**In the *docker-compose.env* file : **
-- Edit *KHEOPS_LOGSTASH_URL* with the logstash url
-
-**In the existing ELK Stack**
-
-- Import logstash config [here](https://github.com/OsiriX-Foundation/logstash/blob/main/logstash.conf)
-- Import index pattern, visualisation and dashboard in your Kibana from [here](https://github.com/OsiriX-Foundation/kibana-initialize/blob/main/export.ndjson)
-- Configure the rollup job `rollup_job_kheops_metrics` by doing a *PUT* _rollup/job/rollup_job_kheops_metrics with the following json [here](https://github.com/OsiriX-Foundation/kibana-initialize/blob/main/rollup_job_kheops_metrics.json)
-- Start the rollup job : *POST* _rollup/job/rollup_job_kheops_metrics/_start
 
 # Dependencies on External Services
 
