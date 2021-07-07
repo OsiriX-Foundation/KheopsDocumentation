@@ -34,7 +34,7 @@ you will be redirected to the Keycloak login screen. The `Register` link will be
 create a new KHEOPS account. 
 
 **notes**
-- On MacOS, the default Docker memory limit of 2GB is not sufficient. 4GB is safer. 
+- On MacOS, the default Docker memory limit of 2GB is not sufficient. 8GB is safer. 
 - Also on MacOS, Safari does not trust connections to 127.0.0.1, so when loading a study in the OHIF viewer (which is loaded with https), Safari refuses the mixed security connection. Chrome respects the standards and considers connections to 127.0.0.1 to be secure so this issue does not occur.
 
 ## Making it secure
