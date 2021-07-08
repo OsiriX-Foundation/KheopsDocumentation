@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Release Notes and Upgrade
+title: Upgrade and Release Notes
 parent: Installation
 nav_order: 1
 permalink: /docs/installation/releasenotes
