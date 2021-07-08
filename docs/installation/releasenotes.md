@@ -77,7 +77,7 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
 - Environment variable `KHEOPS_PEP_LOGSTASH_URL` is no longer used. <br> <br>
 - (Recommended) Add a logging driver to all containers to limit the size of generated logs.
 
-> ```yaml
+```yaml
 logging:
   driver: json-file
   options:
