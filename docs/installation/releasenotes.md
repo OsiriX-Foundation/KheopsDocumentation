@@ -14,6 +14,18 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
 
 ---
 
+## v1.0.1
+
+### Changes
+
+- Better logs when verifying instance (add boolean field 'isValid' and unmatching field in logs)
+
+### Upgrade
+
+- No additional upgrade steps are necessary.
+
+---
+
 ## v1.0.0
 
 ### Changes
