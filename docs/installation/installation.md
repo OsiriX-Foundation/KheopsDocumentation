@@ -43,7 +43,7 @@ In a production environment, Keycloak should be set up on a separate domain. KHE
 
 ### Using Let's Encrypt
 
-A Let's Encrypt enabled reverse proxy for KHEOPS is available. To use it, replace the `-insecure` portion of the tag on the the `kheops-reverse-proxy` with `-letsencrypt`. When using the Let's Encrypt enabled version of the reverse proxy, the `KHEOPS_ROOT_URL` environment variable must be a URL accessible from the general internet, and the `LETS_ENCRYPT_EMAIL` environment variable must be set to the email with which the domain will be registered. Add a volume that will store the Let's Encrypt certificates in order to avoid having Let's Encrypt re-issue certificates every time the container is run.
+A Let's Encrypt enabled reverse proxy for KHEOPS is available. To use it, replace the `-insecure` portion of the tag on the `kheops-reverse-proxy` with `-letsencrypt`. When using the Let's Encrypt enabled version of the reverse proxy, the `KHEOPS_ROOT_URL` environment variable must be a URL accessible from the general internet, and the `LETS_ENCRYPT_EMAIL` environment variable must be set to the email with which the domain will be registered. Add a volume that will store the Let's Encrypt certificates in order to avoid having Let's Encrypt re-issue certificates every time the container is run.
 
 1. In the `docker-compose.env` file change the following:
     - Change the `KHEOPS_ROOT_URL` to your domain.
@@ -82,7 +82,7 @@ A Let's Encrypt enabled reverse proxy for KHEOPS is available. To use it, replac
 
 ### Using a custom certificate
 
-It is possible to use a custom TLS certificate. To use it, replace the `-insecure` portion of the tag on the the `kheops-reverse-proxy`.
+It is possible to use a custom TLS certificate. To use it, replace the `-insecure` portion of the tag on the `kheops-reverse-proxy` with `-secure`.
 
 1. Place the certificate private key file in `secrets/privkey1.pem`.
 2. Place the certificate chain file in `secrets/fullchain1.pem`.
@@ -93,7 +93,7 @@ It is possible to use a custom TLS certificate. To use it, replace the `-insecur
 4. In the ``kheops-authorization`` section of the `docker-compose.yml` file change the following:
     - Remove the `KHEOPS_OIDC_PROVIDER` environment variable.
 5. In the ``kheops-reverse-proxy`` section of the `docker-compose.yml` file change the following:
-    - Remove the `-insecure` portion of the tag.
+    - Replace the `-insecure` portion of the tag with `-secure`.
     - Add an extra_hosts section that loopbacks the root.
 
         ```yaml
