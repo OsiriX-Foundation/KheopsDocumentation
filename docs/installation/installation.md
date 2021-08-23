@@ -22,7 +22,7 @@ Below are instruction for getting a basic instance of KHEOPS up and running. Thi
 4. Run the following command:
 
 ```shell
-bash <(curl -sL https://raw.githubusercontent.com/OsiriX-Foundation/KheopsOrchestration/insecure-install-v1.0.1/kheopsinstall.sh)
+bash <(curl -sL https://raw.githubusercontent.com/OsiriX-Foundation/KheopsOrchestration/insecure-install-v1.0.2/kheopsinstall.sh)
 ```
 
 This script will create a new directory named `kheops` in which it will download docker-compose configuration files, a keycloak realm configuration, and generate the necessary secrets.
