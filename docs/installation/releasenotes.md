@@ -18,7 +18,7 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
 
 ### Changes
 
-- Minor UI updates
+- Minor UI updates.
 
 ### Upgrade
 
@@ -30,7 +30,7 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
 
 ### Changes
 
-- Better logs when verifying instance (add boolean field 'isValid' and unmatching field in logs)
+- Better logs when verifying instance (add boolean field 'isValid' and unmatching field in logs).
 
 ### Upgrade
 
