@@ -14,6 +14,18 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
 
 ---
 
+## v1.0.2
+
+### Changes
+
+- Minor UI updates
+
+### Upgrade
+
+- No additional upgrade steps are necessary.
+
+---
+
 ## v1.0.1
 
 ### Changes
