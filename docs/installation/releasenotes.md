@@ -8,9 +8,35 @@ permalink: /docs/installation/releasenotes
 
 # Release Notes and Upgrade Instructions
 
-KHEOPS is composed of a number of Docker Images. All the docker images belonging to a single version and meant to run together are taged with the same version number. As a general rule, upgrading versions is simply a matter up updating the tag on the docker images. **Addition steps** that need to be performed are detailed below. KHEOPS uses [Liquibase](https://www.liquibase.org) to manage the database schema, and the database will be automatically upgraded.
+KHEOPS is composed of a number of Docker Images. All the docker images belonging to a single version and meant to run together are tagged with the same version number. As a general rule, upgrading versions is simply a matter of updating the tag on the docker images. **Additional steps** that need to be performed are detailed below. KHEOPS uses [Liquibase](https://www.liquibase.org) to manage the database schema, the database will be automatically upgraded.
 
 #### As with any upgrade - make sure to perform a backup of the database used by KHEOPS before performing an upgrade.
+
+---
+## v1.0.4
+
+### Changes
+
+- Permanently deleting a series or study is now possible, through an API call, completely removing its data. The permanent deletion is only possible if using the Dcm4Chee PACS - which is by default the case for KHEOPS.
+- (API) Mutation: 
+  - The [Delete Series API Documentation](https://github.com/OsiriX-Foundation/kheops/wiki/Delete-Series) has been updated to add Permanent Delete, in the Headers section.
+  - The [Delete Study API Documentation](https://github.com/OsiriX-Foundation/kheops/wiki/Delete-Study) has been updated to add Permanent Delete, in the Headers section.
+  
+### Upgrade
+
+(Optional) Only if you want to enable Permanent Delete. Otherwise, no action is necessary.
+
+- Create a new file `kheops_auth_admin_password` in the `secrets` folder eg by running
+`docker run --rm osirixfoundation/openssl rand -base64 32 | tr -dc '[:print:]' > kheops_auth_admin_password`
+- Update the `docker-compose.yml` file:
+  - In the secrets section of `kheops-authorization` add a new secret: `kheops_auth_admin_password`
+  - In the secrets section **at the end of the file** add 
+```yaml
+  kheops_auth_admin_password:
+    file: secrets/kheops_auth_admin_password
+```
+- Update the `docker-compose.env` file and add `KHEOPS_PROXY_PACS_DCM4CHEE_ARC=http://pacsarc:8080/dcm4chee-arc` after the `KHEOPS_PROXY_PACS_WADO_RS` line.
+- Restart KHEOPS by running `docker-compose down` followed by a `docker-compose up -d`
 
 ---
 
