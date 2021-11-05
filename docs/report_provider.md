@@ -10,7 +10,7 @@ permalink: /docs/report_providers
 
 Report Providers are third-parties that provide services for visualization and analysis of DICOM data. Report Providers are also able to upload any resulting data back to KHEOPS.
 
-The [Report Provider API](https://github.com/OsiriX-Foundation/KheopsAuthorization/wiki/Report-Providers-API) provides an OAuth 2.0 inspired mechanism to securely transmit the DICOM data a user has selected to a Report Provider. The Report provider will only have access to the images the user has specifically selected and will then be able to upload new series to the selected study.
+The [Report Provider API](https://github.com/OsiriX-Foundation/kheops/wiki/Report-Providers-API) provides an OAuth 2.0 inspired mechanism to securely transmit the DICOM data a user has selected to a Report Provider. The Report provider will only have access to the images the user has specifically selected and will then be able to upload new series to the selected study.
 
 A sample Report Provider is available at [https://reportprovider.kheops.online](https://reportprovider.kheops.online).
 
