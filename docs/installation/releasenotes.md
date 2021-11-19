@@ -13,6 +13,21 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
 #### As with any upgrade - make sure to perform a backup of the database used by KHEOPS before performing an upgrade.
 
 ---
+
+## v1.0.5
+
+### Changes
+
+- Minor UI updates.
+- Display number of instances in a study.
+- Fixed an issue with orphan series from Report Providers.
+
+### Upgrade
+
+- No additional upgrade steps are necessary.
+
+---
+
 ## v1.0.4
 
 ### Changes
