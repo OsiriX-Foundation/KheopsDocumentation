@@ -33,7 +33,7 @@ To use:
 For example:
 ```
 KHEOPS_UI_SHOW_DELETE_CONTACT=true
-KHEOPS_UI_DELETE_CONTACT=[contact]@[kheops].ch
+KHEOPS_UI_DELETE_CONTACT=[email]@[address].ch
 ```
 
 ---
