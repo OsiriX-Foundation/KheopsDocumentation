@@ -18,7 +18,7 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
 
 ### Changes
 
-- Display delete contact email in the UI.
+- Display delete contact email in the UI. When the following environment variables are set, a new line is added to the delete message, prompting the user to contact the email address provided, if he wants to permanently delete the data.
 
 ### Upgrade
 
