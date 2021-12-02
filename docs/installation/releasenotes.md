@@ -14,6 +14,30 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
 
 ---
 
+## v1.0.6
+
+### Changes
+
+- Display delete contact email in the UI.
+
+### Upgrade
+
+- New *optional* environment variable `KHEOPS_UI_SHOW_DELETE_CONTACT` for the *kheops-ui* container.
+- New *optional* environment variable `KHEOPS_UI_DELETE_CONTACT` for the *kheops-ui* container (obligatory if`KHEOPS_UI_SHOW_DELETE_CONTACT` is set to true).
+
+To use:
+
+- Set the `KHEOPS_UI_SHOW_DELETE_CONTACT` environment variable to true, to enable showing the email address set in the next variable. Use together with the next variable, KHEOPS_UI_DELETE_CONTACT.
+- Set the `KHEOPS_UI_DELETE_CONTACT` : if you set this variable to an email address: when a user is deleting a study, he will be notified to contact this email address if he wants to permanently delete it. Only set this when the previous variable KHEOPS_UI_SHOW_DELETE_CONTACT, is set to true.
+
+For example:
+```
+KHEOPS_UI_SHOW_DELETE_CONTACT=true
+KHEOPS_UI_DELETE_CONTACT=[contact]@[kheops].ch
+```
+
+---
+
 ## v1.0.5
 
 ### Changes
