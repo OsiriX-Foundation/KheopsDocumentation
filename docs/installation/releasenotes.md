@@ -14,6 +14,30 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
 
 ---
 
+## v1.0.6
+
+### Changes
+
+- Display delete contact email in the UI. When the following environment variables are set, a new line is added to the delete message, prompting the user to contact the email address provided, if he wants to permanently delete the data.
+
+### Upgrade
+
+- New *optional* environment variable `KHEOPS_UI_SHOW_DELETE_CONTACT` for the *kheops-ui* container.
+- New *optional* environment variable `KHEOPS_UI_DELETE_CONTACT` for the *kheops-ui* container (obligatory if`KHEOPS_UI_SHOW_DELETE_CONTACT` is set to true).
+
+To use:
+
+- Set the `KHEOPS_UI_SHOW_DELETE_CONTACT` environment variable to true, to enable showing the email address set in the next variable. Use together with the next variable, KHEOPS_UI_DELETE_CONTACT.
+- Set the `KHEOPS_UI_DELETE_CONTACT` : if you set this variable to an email address: when a user is deleting a study, he will be notified to contact this email address if he wants to permanently delete it. Only set this when the previous variable KHEOPS_UI_SHOW_DELETE_CONTACT, is set to true.
+
+For example:
+```
+KHEOPS_UI_SHOW_DELETE_CONTACT=true
+KHEOPS_UI_DELETE_CONTACT=[email]@[address].ch
+```
+
+---
+
 ## v1.0.5
 
 ### Changes
@@ -42,7 +66,7 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
 (Optional) Only if you want to enable Permanent Delete. Otherwise, no action is necessary.
 
 - Create a new file `kheops_auth_admin_password` in the `secrets` folder eg by running
-`docker run --rm osirixfoundation/openssl rand -base64 32 | tr -dc '[:print:]' > kheops_auth_admin_password`
+`printf "%s\n" $(docker run --rm osirixfoundation/openssl rand -base64 32 | tr -dc '[:print:]') > kheops_auth_admin_password`
 - Update the `docker-compose.yml` file:
   - In the secrets section of `kheops-authorization` add a new secret: `kheops_auth_admin_password`
   - In the secrets section **at the end of the file** add 
