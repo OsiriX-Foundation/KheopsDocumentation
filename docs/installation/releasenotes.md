@@ -66,7 +66,7 @@ KHEOPS_UI_DELETE_CONTACT=[email]@[address].ch
 (Optional) Only if you want to enable Permanent Delete. Otherwise, no action is necessary.
 
 - Create a new file `kheops_auth_admin_password` in the `secrets` folder eg by running
-`docker run --rm osirixfoundation/openssl rand -base64 32 | tr -dc '[:print:]' > kheops_auth_admin_password`
+`printf "%s\n" $(docker run --rm osirixfoundation/openssl rand -base64 32 | tr -dc '[:print:]') > kheops_auth_admin_password`
 - Update the `docker-compose.yml` file:
   - In the secrets section of `kheops-authorization` add a new secret: `kheops_auth_admin_password`
   - In the secrets section **at the end of the file** add 
