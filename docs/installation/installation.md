@@ -84,8 +84,8 @@ A Let's Encrypt enabled reverse proxy for KHEOPS is available. To use it, replac
 
 It is possible to use a custom TLS certificate. To use it, replace the `-insecure` portion of the tag on the `kheops-reverse-proxy` with `-secure`.
 
-1. Place the certificate private key file in `secrets/privkey1.pem`.
-2. Place the certificate chain file in `secrets/fullchain1.pem`.
+1. Place the certificate private key file in `secrets/privkey.pem`.
+2. Place the certificate chain file in `secrets/fullchain.pem`.
 3. In the `docker-compose.env` file change the following:
     - Change the `KHEOPS_ROOT_URL` to your domain.
     - Change the `KHEOPS_OIDC_PROVIDER` to your secured Keycloak or other OIDC Provider.
@@ -113,17 +113,17 @@ It is possible to use a custom TLS certificate. To use it, replace the `-insecur
 
         ```yaml
         secrets:
-          - privkey1.pem
-          - fullchain1.pem
+          - privkey.pem
+          - fullchain.pem
         ```
 
 6. In secrets section, add the following secrets:
 
     ```yaml
-    privkey1.pem:
-      file: secrets/privkey1.pem
-    fullchain1.pem:
-      file: secrets/fullchain1.pem
+    privkey.pem:
+      file: secrets/privkey.pem
+    fullchain.pem:
+      file: secrets/fullchain.pem
     ```
 
 ---
