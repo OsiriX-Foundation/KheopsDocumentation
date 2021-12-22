@@ -49,7 +49,7 @@ A Let's Encrypt enabled reverse proxy for KHEOPS is available. To use it, replac
     - Change the `KHEOPS_ROOT_URL` to your domain.
     - Change the `KHEOPS_OIDC_PROVIDER` to your secured Keycloak or other OIDC Provider.
     - If needed, change the `KHEOPS_UI_CLIENTID`.
-    - Set the `LETS_ENCRYPT_EMAIL` environment variable to the email with which the domain will be registered.
+    - Create and set a new `LETS_ENCRYPT_EMAIL` environment variable to the email with which the domain will be registered.
 2. In the ``kheops-authorization`` section of the `docker-compose.yml` file change the following:
     - Remove the `KHEOPS_OIDC_PROVIDER` environment variable.
 3. In the ``kheops-reverse-proxy`` section of the `docker-compose.yml` file change the following:
