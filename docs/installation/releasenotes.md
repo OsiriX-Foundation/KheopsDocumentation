@@ -14,6 +14,18 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
 
 ---
 
+## v1.0.7
+
+### Changes
+
+- Docker parent images have been updated.
+
+### Upgrade
+
+- Run `docker-compose pull` then `docker-compose up -d` to update the Elasticsearch and Logstash containers. An earlier version of these was vulnerable to [log4shell](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44228).
+- For the Kheops containers, update the tag to `v1.0.7`.
+
+---
 ## v1.0.6
 
 ### Changes
