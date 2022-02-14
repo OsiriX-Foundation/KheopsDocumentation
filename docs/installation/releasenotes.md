@@ -14,6 +14,25 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
 
 ---
 
+## v1.0.8
+
+### Changes
+
+- The Dcm4chee containers have been updated.
+- The Keycloak and postgres containers have been updated.
+- The Kheops containers have been updated.
+
+
+### Upgrade
+- You should back up all the databases: keycloak, kheops-postgres and pacs-postgres.
+- Update the keycloak tag to `16.1.1`.
+- Update the kheops-postgres tag to `12.9-alpine`.
+- Update the kheops-kibana, kheops-logstash and kheops-elasticsearch containers tags to `v17.0.0`.
+- Follow the [dcm4chee upgrade guide](https://github.com/dcm4che/dcm4chee-arc-light/wiki/Upgrade-on-Docker) to update the dcm4chee containers.
+- Update the Kheops containers tags to `v1.0.8`.
+
+---
+
 ## v1.0.7
 
 ### Changes
