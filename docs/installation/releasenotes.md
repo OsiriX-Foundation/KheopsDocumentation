@@ -28,7 +28,7 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
 - Update the keycloak tag to `16.1.1`.
 - Update the kheops-postgres tag to `12.9-alpine`.
 - Update the kheops-kibana, kheops-logstash and kheops-elasticsearch containers tags to `v17.0.0`.
-- Follow the [dcm4chee upgrade guide](https://github.com/dcm4che/dcm4chee-arc-light/wiki/Upgrade-on-Docker) to update the dcm4chee containers.
+- Read carefully and follow the [dcm4chee upgrade guide](https://github.com/dcm4che/dcm4chee-arc-light/wiki/Upgrade-on-Docker) to update the dcm4chee containers. The slapd-dcm4chee tag has been updated to `2.6.0-25.1`, postgres-dcm4chee to `13.5-25` and dcm4chee-arc-psql to `5.25.1`.
 - Update the Kheops containers tags to `v1.0.8`.
 
 ---
