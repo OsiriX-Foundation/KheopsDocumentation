@@ -29,11 +29,13 @@ This script will create a new directory named `kheops` in which it will download
 
 Once installed, Keycloak will be available at [http://127.0.0.1:8080](http://127.0.0.1:8080), 
 Kibana will be available at [http://127.0.0.1:8081](http://127.0.0.1:8081) and
-KHEOPS will be available at [http://127.0.0.1](http://127.0.0.1). When you first connect to KHEOPS
-you will be redirected to the Keycloak login screen. The `Register` link will be available to
-create a new KHEOPS account. 
+KHEOPS will be available at [http://127.0.0.1](http://127.0.0.1). 
 
-**notes**
+When you first connect to KHEOPS , you will be redirected to the Keycloak login screen.
+In order to access Kheops, you will need to register a new account. 
+The `Register` link will be available to  create a new KHEOPS account. 
+
+**Notes**
 - On MacOS, the default Docker memory limit of 2GB is not sufficient. 8GB is safer. 
 - Also on MacOS, Safari does not trust connections to 127.0.0.1, so when loading a study in the OHIF viewer (which is loaded with https), Safari refuses the mixed security connection. Chrome respects the standards and considers connections to 127.0.0.1 to be secure so this issue does not occur.
 
