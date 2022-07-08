@@ -14,12 +14,29 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
 
 ---
 
+## v1.1
+
+### Changes
+
+- No user-facing changes.
+
+---
+
+## v1.0.9
+
+### Changes
+
+- No user-facing changes.
+
+---
+
 ## v1.0.8
 
 ### Changes
 
 - The Dcm4chee containers have been updated.
 - The Keycloak and postgres containers have been updated.
+- The Elastic, Logstash and Kibana containers have been updated.
 - The Kheops containers have been updated.
 
 
