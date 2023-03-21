@@ -134,12 +134,9 @@ It is possible to use a custom TLS certificate. To use it, replace the `-insecur
 ### Running without Kibana and logs management
 
 **In the *docker-compose.yml* file :**
-- Remove services : *kibana, elasticsearch, logstash, kheops-authorization-metricbeat and kheops-filebeat-sidecar*
+- Remove services : *kibana, kibana-initialize, elasticsearch, logstash, kheops-authorization-metricbeat and kheops-filebeat-sidecar*
 - Remove networks : *beats_network, elk_network* in all the *docker-compose.yml*
-- Remove volumes : *elastic_data, logs_pep, logs_reverse_proxy, logs_auth* in all the *docker-compose.yml*
-
-**In the *docker-compose.env* file :** 
-- Remove *KHEOPS_INSTANCES* and *KHEOPS_LOGSTASH_URL*
+- Remove volumes : *elastic_data, logs_pep, logs_reverse_proxy, logs_auth* in all the *docker-compose.yml*. Remember to remove all references to these volumes.
 
 ### Sending logs to an existing ELK Stack 
 
@@ -196,4 +193,3 @@ A KHEOPS instance consists of the KHEOPS Docker containers interacting with the 
 | ![Architecture](/img/architecture.svg) | 
 |:--:| 
 | *Architecture of a KHEOPS installation* |
-
