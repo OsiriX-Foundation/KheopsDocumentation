@@ -14,6 +14,15 @@ KHEOPS is composed of a number of Docker Images. All the docker images belonging
 
 ---
 
+## v1.1.1
+
+### Changes
+
+- The environment variable `KHEOPS_AUTHORIZATION_DISABLE_VERIFICATION` can be used to disable the verification of matching tags for studies & series during the "VerifyInstance" action, delegating the ability to merge/overwrite fields such as PatientID to the underlying DCM4CHEE instance. The environment variable can be omitted completely or set to any value other than "true" to keep the default behavior of Kheops.
+This can be useful in research settings, when data may be updated several times over the course of the project.
+
+---
+
 ## v1.1
 
 ### Changes
@@ -327,4 +336,3 @@ Versions of KHEOPS up to v0.9.2 had a strong dependency on Keycloak. Only the us
 ## Older versions
 
 To upgrade from versions older than v0.9.2, please contact us directly at [support@kheops.online](mailto:support@kheops.online?subject=Upgrade%20KHEOPS) or [spalte@naturalimage.ch](mailto:spalte@naturalimage.ch?subject=Upgrade%20KHEOPS).
-
